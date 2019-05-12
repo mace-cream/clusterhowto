@@ -122,6 +122,10 @@ soure .bashrc
 
 to make the change take into effect in your current session. Alternatively, you can simply start a new session by re-logging.
 
+### C++ developer
+
+See [cpp.md](./cpp.md) for detail.
+
 ### Python packages
 
 If you need any additional Python packages, please ask the admins to have them installed. Alternatively, you can download and install Anaconda inside your own home directory.   
