@@ -21,6 +21,15 @@ common users, you can contact [zhaofeng-shu33](https://github.com/zhaofeng-shu33
 
 To develop Python binding for your C++ project, you need python development header files. If default finding fails by CMake, you can 
 specify it manually by
+
 ```bash
 cmake -DPYTHON_INCLUDE_DIRS=/usr/include/python3.6m/ ..
 ```
+
+If you need `cmake3` to run in `setup.py`, you can use
+
+```bash
+CMAKE=cmake3 pip3 install -e .
+```
+
+Then you can read the environment variable in your python script.
