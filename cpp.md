@@ -1,4 +1,3 @@
-
 ## CMake
 
 The version of `cmake` is **2.8**. To use higher version, you need cmake3.
@@ -17,3 +16,11 @@ Some preinstalled libraries (for example `boost-1.53.0`) are built by gcc versio
 A typical C++ project dependends on some other libraries, which should be
 installed system-wide. The installation needs sudo privileges. If you are
 common users, you can contact [zhaofeng-shu33](https://github.com/zhaofeng-shu33).
+
+## Python
+
+To develop Python binding for your C++ project, you need python development header files. If default finding fails by CMake, you can 
+specify it manually by
+```bash
+cmake -DPYTHON_INCLUDE_DIRS=/usr/include/python3.6m/ ..
+```
