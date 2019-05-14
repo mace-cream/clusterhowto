@@ -1,3 +1,7 @@
+## Compiler
+
+I recommend to use higher version of `g++`. You can type `module load gcc/8.2.0`.
+
 ## CMake
 
 The version of `cmake` is **2.8**. To use higher version, you need cmake3.
