@@ -6,6 +6,7 @@ Version 3.0
 
 **Changelog**:
 
+* Add how to use C++ documentation
 * Removed web browser access since it is super laggy
 * Disabled ssh between nodes since we are moving to slurm for GPU management
 * Clarified instructions on module load
