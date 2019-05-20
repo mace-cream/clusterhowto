@@ -33,7 +33,7 @@ cmake -DPYTHON_INCLUDE_DIRS=/usr/include/python3.6m/ ..
 If you need `cmake3` to run in `setup.py`, you can use
 
 ```bash
-CMAKE=cmake3 pip3 install -e .
+CMAKE=cmake3 pip3 install --user -e .
 ```
 
 Then you can read the environment variable in your python script.
