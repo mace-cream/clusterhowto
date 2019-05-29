@@ -1,11 +1,12 @@
 # How to Use Our New Cluster 
 
-Version 3.0
+Version 3.1
 
 ---------------------------------------
 
 **Changelog**:
 
+* Add how to use remote desktop
 * Add how to use C++ documentation
 * Removed web browser access since it is super laggy
 * Disabled ssh between nodes since we are moving to slurm for GPU management
@@ -19,6 +20,7 @@ Known issues:
 
 ## 1. Access the cluster
 
+### Shell
 Connect to the server with ssh:
 
 ```bash
@@ -32,6 +34,9 @@ Connect to the server with ssh:
 * The default password is `123456`
 
 IMPORTANT: Once you log in, reset password using the passwd tool and follow the prompt.  
+
+### Remote Desktop
+See [vnc](./vnc.md)
 
 ```bash
 > passwd 
