@@ -35,12 +35,12 @@ Connect to the server with ssh:
 
 IMPORTANT: Once you log in, reset password using the passwd tool and follow the prompt.  
 
-### Remote Desktop
-See [vnc](./vnc.md)
-
 ```bash
 > passwd 
 ```
+
+### Remote Desktop
+See [vnc](./vnc.md)
 
 ## 2. Where are my files?
 
