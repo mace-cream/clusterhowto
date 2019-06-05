@@ -136,6 +136,7 @@ See [cpp.md](./cpp.md) for detail.
 
 If you need any additional Python packages, you can use `pip` to install it within your home directory (with `--user` option)
 
+Notice that for python 2.7, `--user` and `--editable` cannot be used simultaneously. 
 
 ## 5. How to use GPUs
 
