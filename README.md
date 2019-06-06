@@ -42,6 +42,13 @@ IMPORTANT: Once you log in, reset password using the passwd tool and follow the 
 ### Remote Desktop
 See [vnc](./vnc.md)
 
+### Jupyter
+Visit [https://10.8.4.170:8000](https://10.8.4.170:8000) and login with your ssh username and password. 
+
+You can program in Python language using anaconda3 or python2 kernel currently.
+
+Currently the jupyter kernel is run on manage node and does not support GPU.
+
 ## 2. Where are my files?
 
 Your home directory is located at `/home/[username]`.  It contains the following:
@@ -137,6 +144,12 @@ See [cpp.md](./cpp.md) for detail.
 If you need any additional Python packages, you can use `pip` to install it within your home directory (with `--user` option)
 
 Notice that for python 2.7, `--user` and `--editable` cannot be used simultaneously. 
+
+For example, to install a package called graphviz, which is not bundled by anaconda. You can type:
+
+```shell
+python -m pip install --user graphviz
+```
 
 ## 5. How to use GPUs
 
