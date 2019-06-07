@@ -1,11 +1,14 @@
 # How to Use Our New Cluster 
 
-Version 3.1
 
 ---------------------------------------
 
-**Changelog**:
+## Changelog
 
+### Version 3.2
+* Add how to use Jupyter
+
+### Version 3.1
 * Add how to use remote desktop
 * Add how to use C++ documentation
 * Removed web browser access since it is super laggy
