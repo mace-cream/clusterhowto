@@ -5,6 +5,9 @@
 
 ## Changelog
 
+### Version 3.3
+* Add conda advanced tutorial
+
 ### Version 3.2
 * Add how to use Jupyter
 
@@ -144,7 +147,8 @@ See [cpp.md](./cpp.md) for detail.
 
 ### Python packages
 
-If you need any additional Python packages, you can use `pip` to install it within your home directory (with `--user` option)
+#### Simple Solution
+If you need any additional Python packages which is not installed by anaconda or system python by default, you can use `pip` to install it within your home directory (with `--user` option)
 
 Notice that for python 2.7, `--user` and `--editable` cannot be used simultaneously. 
 
@@ -153,6 +157,9 @@ For example, to install a package called graphviz, which is not bundled by anaco
 ```shell
 python -m pip install --user graphviz
 ```
+#### Custom Environment
+If you need another version of Python package wich is incompatible with existing installation. You need to configure your own Python environment using `conda`.
+See [Configure Environment](http://10.8.4.170/wiki/index.php/Configure_the_environment) for detail.
 
 ## 5. How to use GPUs
 
