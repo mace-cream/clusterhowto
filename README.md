@@ -277,3 +277,5 @@ Find out who is using all the resources with `showuserjobs`
 
 ![](images/tutorial04.png)
 
+## 7. Further documentation
+You can download the official user guild of how to user cluster at [User Manual](http://support.brightcomputing.com/manuals/8.2/user-manual.pdf)
