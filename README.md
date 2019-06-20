@@ -67,17 +67,28 @@ In addition, `/data/datasets` is now located at `/home/dataset`.
 
 ## 3. First look of the BCM Cluster 
 
-Our cluster has 5 nodes (servers) :
+Our cluster has 5 nodes (servers)
 
-* `bcm`:  log-in server with ip address 10.8.4.170.  
+| nodename | direct shell access | ip address | OS           |
+| -------- | ------------------- | ---------- | ------------ |
+| bcm      | Yes                 | 10.8.4.170 | CentOS 7.6   |
+| node01   | No                  |            | CentOS 7.6   |
+| node02   | No                  |            | CentOS 7.6   |
+| node03   | No                  |            | CentOS 7.6   |
+| nfs      | Yes                 | 10.8.4.172 | Ubuntu 16.04 |
+
+* `bcm`:  management node  
 * `node01` : computing node with 8 TITAN V GPUs, 256GB RAM
 * `node02`: computing node with 8 TITAN V GPUs, 256GB RAM
 * `node03` : computing node with 4 Telsa K80 GPU cores and 2 TITAN V GPUs, 128GB RAM, fastest CPU among all nodes
-* a storage node that hosts the 77T file system `/home` (should not be accessed directly) 
+* `nfs`: storage node that hosts the 77T file system `/home`
 
-As a user, you will only have access to the `bcm` node. To take advantage of the computing resources on nodes 1-3, you will need to use the SLURM workload manager.   (See Section 5.)
+As a user, you can access to the `bcm` and `nfs` node using the same username and password.
+These User information is stored in a central database. 
+To take advantage of the computing resources on nodes 1-3, you will need to use the SLURM workload manager.   (See Section 5.)
 
-Unlike the old server, your home directory on the BCM cluster are totally invisible to other users. Nevertheless, you can place shared files in 
+By default, your home directory has `700` permissions, which means others do not have read access to the files in your home. 
+You can change the permission to enable file sharing or you can place shared files in 
 
 *  `/home/dataset` : save large public datasets here 
 * `/data1`: 5T temporary storage space 
