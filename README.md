@@ -44,7 +44,7 @@ IMPORTANT: Once you log in, reset password using the passwd tool and follow the 
 ```bash
 > passwd 
 ```
-
+The password change is shared, which means your login password to other machines are changed as well.
 ### Remote Desktop
 See [vnc](./vnc.md)
 
