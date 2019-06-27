@@ -138,7 +138,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-module load gcc anaconda3/py3 cuda90/toolkit/9.0.176 cudnn/7.0 openmpi/cuda/64/3.1.1
+module load gcc anaconda3/py3 cuda90/toolkit/9.0.176 cudnn/7.0 openmpi/cuda/64/3.1.3
 module load slurm 
 ```
 
