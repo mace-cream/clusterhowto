@@ -32,6 +32,7 @@ thinlinc 是商业软件，实验室买的授权是10个用户同时在线。
 
 欲使用第二类远程桌面，首先下载 VNC 客户端，这里推荐 [realvnc](https://www.realvnc.com/en/connect/download/viewer/).
 
+[](./screenshot2.png)
 输入 `10.8.4.170:9327` 和密码 `lab2c` 即可连接，连接后输入Win10 公用账号和密码即可登录。
 vmware 是商业软件，服务器部署的是免费版本，功能多有限制，本桌面目前只能一人使用。
 
