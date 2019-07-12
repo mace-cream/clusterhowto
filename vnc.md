@@ -4,7 +4,7 @@
 
 目前实验室部署的远程桌面有2类，均通过vnc连接，一类是 centos 7 操作系统(Linux), 是非虚拟化的；
 
-另一类是用 VMWare 虚拟机部署的一台 Win 10 （公共账号用户名：lab2c，密码：guest，是Win10 普通用户）。
+另一类是用 VMWare 虚拟机部署的一台 Win 10，4核8GB内存，128GB SSD本机硬盘（CPU慢于非虚拟化桌面，而由于存储类型不一样，Win10 VMWare, Disk IO快于linux 系统中 Home读写）（公共账号用户名：lab2c，密码：guest，是Win10 普通用户）。
 
 ## First Type
 
