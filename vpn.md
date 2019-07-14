@@ -1,8 +1,13 @@
 # 官方VPN
 目前使用清华深研院的VPN可以在外网连接实验室服务器。
 VPN 初始用户名是学号，初始密码是身份证后8位。使用说明见 [VPN快速使用指南.docx](http://10.8.4.170/wiki/index.php/file:1_1_VPN快速使用指南.docx)
-由于该VPN 5分钟内无连接即自动断开，给使用SSH 造成不便，建议用浏览器开一个实验室 Jupyter 的进程保持连接。
-该VPN 在电脑睡眠时会断开，需要关掉客户端重新打开。
+由于该VPN 5分钟内无连接即自动断开，给使用SSH 造成不便，建议通过设置客户端`ssh_config`中添加：
+```
+ServerAliveInterval 30
+ServerAliveCountMax 60
+```
+本地 ssh 每隔30s向 server 端 sshd 发送 keep-alive 包，如果发送 60 次，server 无回应断开连接。
+
 虽然官网上可以下载Linux 的客户端，但客户端比较旧了，据说只支持 Ubuntu 16.04, Ubuntu 17.04.
 
 # 自建内网穿透
