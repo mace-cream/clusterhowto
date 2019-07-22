@@ -1,6 +1,6 @@
 # 官方VPN
 目前使用清华深研院的VPN可以在外网连接实验室服务器。请从 [http://vpn.sz.tsinghua.edu.cn](http://vpn.sz.tsinghua.edu.cn) 下载相应的客户端。
-下载安装打开VPN，服务器地址填 https://vpn.sz.tsinghua.edu.cn，
+下载安装打开VPN，服务器地址填 [https://vpn.sz.tsinghua.edu.cn](https://vpn.sz.tsinghua.edu.cn)，
 VPN 初始用户名是学号，初始密码是身份证后8位。
 
 由于该VPN 5分钟内无连接即自动断开，给使用SSH 造成不便，建议通过设置客户端`ssh_config`中添加：
