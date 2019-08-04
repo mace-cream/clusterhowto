@@ -18,10 +18,15 @@ ServerAliveCountMax 60
 智园和大学城的网络做过特殊处理，可以直接访问 info 等网站，但有些站点还不行（比如软件中心下载软件、激活 Win10、Matlab 等），此时要用到 校本部 VPN
 客户端 pulse secure。
 Windows 和移动端下载地址 在 [https://sslvpn.tsinghua.edu.cn](https://sslvpn.tsinghua.edu.cn) 页面可以找到。
-Mac 和 Linux 下载地址学校官方没有提供，可以自行搜索，这里给出推荐地址（国外网站，客户端下载速度较慢）：
-* [https://apple.lse.ac.uk/resources/PulseSecureStandardInstaller.pkg](https://apple.lse.ac.uk/resources/PulseSecureStandardInstaller.pkg)
+Mac 和 Linux 下载地址学校官方没有提供，可以自行搜索，这里给出开发这个客户端软件的公司提供的下载地址（国外网站，客户端下载速度较慢）：
+* [http://trial.pulsesecure.net/clients/ps-pulse-mac-9.0r4.0-b1731-installer.dmg](http://trial.pulsesecure.net/clients/ps-pulse-mac-9.0r4.0-b1731-installer.dmg)
+* [CentOS/RHEL](http://trial.pulsesecure.net/clients/ps-pulse-linux-9.0r4.0-b943-centos-rhel-64-bit-installer.rpm)
+* [Ubuntu/Debian](http://trial.pulsesecure.net/clients/ps-pulse-linux-9.0r4.0-b943-ubuntu-debian-64-bit-installer.deb)
 
-使用时，地址是 https://sslvpn.tsinghua.edu.cn, 用户名和密码与 info 相关。
+上面的地址需要填邮箱地址获取，如果由于软件版本更新等原因不可用可访问 [download](https://www.pulsesecure.net/trynow/client-download/)
+按提示进行获取。另外，国外一些大学也可以下载到 Mac 版的 Pulse Secure, 比如 https://apple.lse.ac.uk/resources/PulseSecureStandardInstaller.pkg。
+
+使用时，地址是 https://sslvpn.tsinghua.edu.cn, 用户名和密码与 info 相同。
 以下是 Mac 和 Linux 版本的使用截图
 ![mac](./mac.png)
 # 自建内网穿透
