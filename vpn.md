@@ -76,3 +76,11 @@ curl 客户端通过命令行参数可以指定 proxy server，但 matlab 不行
 
 最终启动效果图如下：
 ![](./server_matlab.png)
+
+目前 matlab 装到了集群共享目录 `/cm/shared/modulefiles/matlab` 下面
+
+通过在其他计算节点下安装 proxychains 并集成好，配置好 module load/unload matlab，可以实现对最终用户无感地使用 matlab,并且能以 shell mode 启动，通过 slurm 以 batch mode 完成大型计算任务等。
+
+### Known Issues
+* Win10 虚拟机目前是以 feng 用户启动的，有无可能以 daemon 启动。3proxy 已经注册为 Win 10 service, 不需要用户登录 Win10 即可在后台运行。
+* Win10 安装了校本部 VPN 客户端，用的是 zhaofeng-shu33 的账号，需要一直保持连接。
