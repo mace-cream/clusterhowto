@@ -67,7 +67,7 @@ curl 客户端通过命令行参数可以指定 proxy server，但 matlab 不行
 ### 具体步骤
 这里以服务器的管理节点为例，对于工作站，也是类似的。
 
-1. 首先要在管理节点安装 VMWare Win10 虚拟机，配置网络环境为 Bridge，使用管理节点的 etho adapter，这里可能需要解锁 vmware 的一个高级功能，参考：
+1. 首先要在管理节点安装 VMWare Win10 虚拟机，配置网络环境为 Bridge，使用管理节点的 etho adapter，这里可能需要解锁 vmware 的一个高级功能，参考 [wiki](http://10.8.4.170/wiki/index.php/Admin)：
 配置静态ip, network mask, gateway, dns server ip ， 然后确保 win10 可以上外网. 打开 win10 icmp firewall 的限制。在管理节点可以 ping 通 10.1.1.4。
 
 1. 然后在 Win10 上安装 3proxy pre-built binary. 完成相关的配置，其中的要点有：取消 proxy 密码限制，打开对 3proxy service 的 firewall restriction。在管理节点使用 curl 命令测试 proxy server 是否正常。
