@@ -18,7 +18,7 @@ ServerAliveCountMax 60
 智园和大学城的网络做过特殊处理，可以直接访问 info 等网站，但有些站点还不行（比如软件中心下载软件、激活 Win10、Matlab 等），此时要用到 校本部 VPN
 客户端 pulse secure。
 Windows 和移动端下载地址 在 [https://sslvpn.tsinghua.edu.cn](https://sslvpn.tsinghua.edu.cn) 页面可以找到。
-Mac 和 Linux 下载地址学校官方没有提供，可以自行搜索，这里给出开发这个客户端软件的公司提供的下载地址（国外网站，客户端下载速度较慢）：
+Mac 下载地址学校官方没有提供，可以自行搜索，这里给出开发这个客户端软件的公司提供的下载地址（国外网站，客户端下载速度较慢）：
 * [MacOS](http://trial.pulsesecure.net/clients/ps-pulse-mac-9.0r4.0-b1731-installer.dmg)
 
 虽然官网上可以下载Linux 的客户端，但好像学校服务器不支持 Linux 系统连接（？），无法成功使用。
