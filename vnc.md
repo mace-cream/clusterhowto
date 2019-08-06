@@ -1,10 +1,10 @@
 ## Introduction
 
-本文档介绍远程桌面的使用，目前支持11个连接同时在线，未来有可能有所增加。
+本文档介绍远程桌面的使用，目前支持10个连接同时在线，未来有可能有所增加。
 
-目前实验室部署的远程桌面有2类，均通过vnc连接，一类是 centos 7 操作系统(Linux), 是非虚拟化的；
+目前实验室部署的远程桌面有2类, 一类是 centos 7 操作系统(Linux), 是非虚拟化的, 相对比较成熟；
 
-另一类是用 VMWare 虚拟机部署的一台 Win 10，4核8GB内存，128GB SSD本机硬盘（CPU慢于非虚拟化桌面，而由于存储类型不一样，Win10 VMWare, Disk IO快于linux 系统中 Home读写）（公共账号用户名：lab2c，密码：guest，是Win10 普通用户）。
+另一类是用 VMWare 虚拟机部署的一台 Win 10，4核8GB内存，128GB SSD本机硬盘（CPU慢于非虚拟化桌面，而由于存储类型不一样，Win10 VMWare, Disk IO 快于linux 系统中 Home读写）（公共账号用户名：lab2c，密码：guest，是Win10 普通用户）和 MacOS 13（4核8GB内存，64GB SSD本机硬盘，暂无公共账号）。
 
 ## First Type
 
@@ -29,11 +29,15 @@ if [ -f ~/.bashrc ] && [ -z "$TLPREFIX" ]; then
 
 thinlinc 是商业软件，实验室买的授权是10个用户同时在线。
 
-## Second Type
+## Second Type (Experimental)
 
-欲使用第二类远程桌面，如果用 Windows 电脑，可直接用系统自带的远程桌面连接；如果用其他操作系统，需要下载RDP客户端。
+Windows 10 虚拟机原来的网络配置是用 NAT 方法将远程桌面 3306 端口暴露给外网，后来由于要支持 matlab 的认证，改用 Bridge 方法加入 10.1.1.1/24 内网，虽然3306端口还开着，但原来配置的远程桌面不能使用了。目前可以用 VNC 或 VMWare （先登录 First Type 远程桌面）的方式连接。
 
+之前连接的效果图
 ![](./screenshot2.png)
-输入 `10.8.4.170:9327` 、用户名、密码即可登录，支持多用户并发。
 
+### Third type (Experimental) -- MacOS High Serria
+MacOS 的虚拟机是三大操作系统中最难配置的，其中一个难点是镜像不好找且不开源。鉴于个人学习研究用途并不是 illegal，服务器上VMWare 配置了一台 MacOS 的虚拟机。可以用 VNC 或 VMWare 连接。
 
+连接效果图
+![](./mac_screenshot3.png)
