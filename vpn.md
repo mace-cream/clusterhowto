@@ -24,7 +24,7 @@ Mac 下载地址学校官方没有提供，可以自行搜索，这里给出开�
 虽然官网上可以下载Linux 的客户端，但好像学校服务器不支持 Linux 系统连接（？），无法成功使用。
 
 使用时，地址是 https://sslvpn.tsinghua.edu.cn, 用户名和密码与 info 相同。
-以下是 Mac 和 Linux 版本的使用截图
+以下是 Mac 版本的使用截图
 ![mac](./mac.png)
 
 # 自建内网穿透
