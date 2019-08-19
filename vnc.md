@@ -4,7 +4,11 @@
 
 目前实验室部署的远程桌面有2类, 一类是 centos 7 操作系统(Linux), 是非虚拟化的, 相对比较成熟；
 
-另一类是用 VMWare 虚拟机部署的一台 Win 10，4核8GB内存，128GB SSD本机硬盘（CPU慢于非虚拟化桌面，而由于存储类型不一样，Win10 VMWare, Disk IO 快于linux 系统中 Home读写）（公共账号用户名：lab2c，密码：guest，是Win10 普通用户）和 MacOS 13（4核8GB内存，64GB SSD本机硬盘，暂无公共账号）。
+另一类是用 VMWare 虚拟机部署的，为节约资源，一般处于关闭状态，仅在有需要时开机并且对外开放端口。
+* 一台 Win 10，4核8GB内存，128GB SSD本机硬盘
+（CPU慢于非虚拟化桌面，而由于存储类型不一样，Win10 VMWare, Disk IO 快于linux 系统中 Home读写）
+（公共账号用户名：lab2c，密码：guest，是Win10 普通用户）
+* MacOS 13（4核8GB内存，64GB SSD本机硬盘，暂无公共账号）
 
 ## First Type
 
