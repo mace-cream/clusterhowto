@@ -5,6 +5,9 @@
 
 ## Changelog
 
+### Version 3.4
+* Add Matlab on Manage Node
+
 ### Version 3.3
 * Add conda advanced tutorial
 
@@ -47,6 +50,11 @@ IMPORTANT: Once you log in, reset password using the passwd tool and follow the 
 The password change is shared, which means your login password to other machines are changed as well.
 ### Remote Desktop
 See [vnc](./vnc.md)
+
+### Matlab
+If you connect the server via X11 or vnc desktop, you can invoke matlab by `proxychains4 matlab -nodesktop`. Notice this software is experimental supported by lab2c web admin.
+Matlab may not start as you want.
+![](matlab_terminal.png)
 
 ### Jupyter
 Visit [https://10.8.4.170:8000](https://10.8.4.170:8000) and login with your ssh username and password. 
