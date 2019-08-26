@@ -27,16 +27,16 @@ Mac 下载地址学校官方没有提供，可以自行搜索，这里给出开�
 以下是 Mac 版本的使用截图
 ![mac](./mac.png)
 
-# 自建内网穿透
+## 自建内网穿透
 如果你使用其他 Linux 发行版的操作系统，很可能无法使用官方VPN外网接入实验室服务器，此时可以用自建内网穿透的方式，
 比如 [ssh 端口转发](https://www.cnblogs.com/zhaofeng-shu33/p/10685685.html) 或者 搭建[frp](https://github.com/fatedier/frp)
 服务。由于智园网络不是很稳定以及这两种方式本身的局限性，可能会断掉。断掉后可以结合官方VPN重启。
 
-# GFW
+## GFW
 See [How to break through GFW](http://10.8.4.170/wiki/index.php/Guild_gfw)
 
-# windows proxy server 与 proxychains 配合
-## 背景
+## windows proxy server 与 proxychains 配合
+### 背景
 * 装学校 Linux 版  Matlab 会遇到 matlab 启动时连学校服务器 matlab.cic.tsinghua.edu.cn，但在智园的网络环境下这个 ip 是校本部内网无法访问，因此 正版matlab 无法启动。
 * 假如你的工作站用 Linux 操作系统，已知 YangLi 用 Ubuntu, zhaofeng-shu33 在深研院用 Fedora，则无法使用 VPN 客户端连接特定的服务。
 ## Solution
@@ -84,3 +84,9 @@ curl 客户端通过命令行参数可以指定 proxy server，但 matlab 不行
 ### Known Issues
 * Win10 虚拟机目前是以 feng 用户启动的，有无可能以 daemon 启动。3proxy 已经注册为 Win 10 service, 不需要用户登录 Win10 即可在后台运行。
 * Win10 安装了校本部 VPN 客户端，用的是 zhaofeng-shu33 的账号，需要一直保持连接。
+
+## OpenVPN
+在实验室服务器管理节点部署 OpenVPN Server, 客户端安装 OpenVPN Client 后可直接访问到集群内网（计算节点和Win虚拟机），比如 ping 通 `10.1.1.2`（node02 的 ip）。
+安装 Client 后，要手动导入根证书，root certificate 在服务器 `/usr/share/doc/openvpn-2.4.6/sample/sample-keys/ca.crt` 的位置上。
+将该文件下载到本地，client config file 里 ca 换成本地 ca.crt 的绝对路径，注释掉 `cert` 和 `key` 的配置。
+添加 server ip 地址： `remote 10.8.4.170 1194` 及 使用用户名密码校验：`auth-user-pass`（与 ssh 登陆用户名与密码相同）。
