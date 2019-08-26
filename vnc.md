@@ -35,7 +35,7 @@ if [ -f ~/.bashrc ] && [ -z "$TLPREFIX" ]; then
 
 thinlinc 是商业软件，实验室买的授权是10个用户同时在线。
 ## Second Type
-仅限于使用 Thinlinc 客户端连接，支持最多5个用户同时在线，ip地址为 10.8.4.172，用户名与密码同 ssh 登陆用。
+仅限于使用 Thinlinc 客户端连接，建议选 gnome desktop, 支持最多5个用户同时在线，ip地址为 10.8.4.172，用户名与密码同 ssh 登陆用。
 ![](./vnc2.png)
 
 ## Third Type (Experimental)
