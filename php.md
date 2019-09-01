@@ -3,3 +3,6 @@ backend programming language. If you use php, you can use our server as the deve
 
 Two versions of php are installed on the server. One is the default version 5.4 when you invoke `php` command. The other is version 7.2, also
 the version used to serve our lab wiki. The command line client is located at `/opt/rh/rh-php72/root/usr/bin/php`, not added to path.
+
+To develop, you can invoke `php -S localhost:8213` in the shell with current working directory as your document root. Then you can access the port to
+debug your application.
