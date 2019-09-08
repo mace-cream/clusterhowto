@@ -286,4 +286,4 @@ Find out who is using all the resources with `showuserjobs`
 ![](images/tutorial04.png)
 
 ## 7. Further documentation
-You can download the official user guild of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/文件:User-manual.pdf)
+You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/文件:user-manual.pdf)
