@@ -1,0 +1,1 @@
+The configuration of jupyterhub on our lab is located at `/etc/jupyterhub/jupyterhub_config.py`
