@@ -1,0 +1,1 @@
+The maintainance web GUI interface is at [bright-view](https://10.8.4.170:8081/bright-view), you should use root user account to login.
