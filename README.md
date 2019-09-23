@@ -30,6 +30,9 @@ Known issues:
 ## 1. Access the cluster
 
 ### Shell
+On Windows client, [ModaXterm](https://mobaxterm.mobatek.net/) is recommended though it is a commertial freeware. It integrates STFP and SSH so that you can view and edit your file 
+easily. You can even change the default editor used by ModaXterm.
+
 Connect to the server with ssh:
 
 ```bash
