@@ -19,8 +19,15 @@ Some preinstalled libraries (for example `boost-1.53.0`) are built by gcc versio
 
 A typical C++ project dependends on some other libraries, which should be
 installed system-wide. The installation needs sudo privileges. If you are
-common users, you can contact [zhaofeng-shu33](https://github.com/zhaofeng-shu33).
-
+common users, you can contact the server admin to install them. Once installed, many packages can be checked via `pkg-config`.
+For example, to see which compile flags are needed to use glib library, you can use:
+```shell
+pkg-config --cflags glib-2.0
+```
+To see which link flags are needed to use glib library, use:
+```shell
+pkg-config --libs glib-2.0
+```
 ## Python Binding
 
 To develop Python binding for your C++ project, Cython is needed. For complex binding, you need to customize your `setup.py` to build the extension.
