@@ -12,13 +12,15 @@ Known issues:
 
 ### Shell
 On Windows client, [ModaXterm](https://mobaxterm.mobatek.net/) is recommended though it is a commercial freeware. It integrates SFTP and SSH so that you can view and edit your file 
-easily. You can even change the default editor used by ModaXterm.
-
-Connect to the server with ssh:
+easily. You can even change the default editor used by ModaXterm. Other options are possible. For example, if you install git client for windows. You 
+can ssh to the server using git bash. The syntax is simply:
 
 ```bash
 > ssh -Y [username]@10.8.4.170
 ```
+
+On Mac client, you can use the terminal to connect to the server. The syntax is listed as above. If you encounter locale setting warning, please add
+`export LC_ALL=en_US.UTF-8` to your `~/.bash_profile`. See [ssh.md](./ssh.md) for detailed doc.
 
 * `username` is the same user name you had on the old server .  
 
