@@ -3,25 +3,6 @@
 
 ---------------------------------------
 
-## Changelog
-
-### Version 3.4
-* Add Matlab on Manage Node
-
-### Version 3.3
-* Add conda advanced tutorial
-
-### Version 3.2
-* Add how to use Jupyter
-
-### Version 3.1
-* Add how to use remote desktop
-* Add how to use C++ documentation
-* Removed web browser access since it is super laggy
-* Disabled ssh between nodes since we are moving to slurm for GPU management
-* Clarified instructions on module load
-* Added instructions on using slurm interactively with srun
-
 Known issues:
 
 * /data1 and /data2 are not yet writable to all users
@@ -30,7 +11,7 @@ Known issues:
 ## 1. Access the cluster
 
 ### Shell
-On Windows client, [ModaXterm](https://mobaxterm.mobatek.net/) is recommended though it is a commertial freeware. It integrates STFP and SSH so that you can view and edit your file 
+On Windows client, [ModaXterm](https://mobaxterm.mobatek.net/) is recommended though it is a commercial freeware. It integrates SFTP and SSH so that you can view and edit your file 
 easily. You can even change the default editor used by ModaXterm.
 
 Connect to the server with ssh:
@@ -59,10 +40,11 @@ If you connect the server via X11 or vnc desktop, you can invoke matlab by `prox
 Matlab may not start as you want.
 ![](matlab_terminal.png)
 
-### Jupyter
-Visit [https://10.8.4.170:8000](https://10.8.4.170:8000) and login with your ssh username and password. 
+### Webpage
+Our lab homepage is located at [http://10.8.4.170](http://10.8.4.170). From there you can find the link to our lab's wiki, gitlab and jupyter etc.
+For wiki and gitlab web service you need to register first. For jupyter web service, you login with your ssh username and password. 
 
-You can program in Python language using anaconda3 or python2 kernel currently.
+You can program in Python language using anaconda3 or python2 kernel currently on jupyter.
 
 Currently the jupyter kernel is run on manage node and does not support GPU.
 
@@ -163,16 +145,16 @@ soure .bashrc
 
 to make the change take into effect in your current session. Alternatively, you can simply start a new session by re-logging.
 
-### C++ developer
+### C/C++ developer
 
 See [cpp.md](./cpp.md) for detail.
 
 ### Python packages
+Important Notice: Since python 2.7 will not be supported from Jan. 1st 2020 and many famous packages do not support python version 2 now. Therefore any new problems about python 2 will not be supported by our lab's server admin.  
 
 #### Simple Solution
-If you need any additional Python packages which is not installed by anaconda or system python by default, you can use `pip` to install it within your home directory (with `--user` option)
 
-Notice that for python 2.7, `--user` and `--editable` cannot be used simultaneously. 
+If you need any additional Python packages which is not installed by anaconda or system python by default, you can use `pip` to install it within your home directory (with `--user` option)
 
 For example, to install a package called graphviz, which is not bundled by anaconda. You can type:
 
@@ -180,8 +162,10 @@ For example, to install a package called graphviz, which is not bundled by anaco
 python -m pip install --user graphviz
 ```
 #### Custom Environment
-If you need another version of Python package wich is incompatible with existing installation. You need to configure your own Python environment using `conda`.
+If you need another version of Python package which is incompatible with existing installation. You need to configure your own Python environment using `conda`.
 See [Configure Environment](http://10.8.4.170/wiki/index.php/Configure_the_environment) for detail.
+
+For further detail you can check [python.md](./python.md).
 
 ## 5. How to use GPUs
 
@@ -278,8 +262,8 @@ You can pipeline your work by submitting multiple sbatch scripts. The jobs will 
 * Official documentation: https://slurm.schedmd.com/documentation.html
 * A tutorial: https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html
 
-## 6. Useful stuff
-
+## 6. Useful stuff about slurm
+You can find many useful tutorial about slurm from world wide web. Here are some tips:
 `pestat` prints Slurm cluster status with 1 line per node. 
 
 ![](images/tutorial05.png)
@@ -290,3 +274,22 @@ Find out who is using all the resources with `showuserjobs`
 
 ## 7. Further documentation
 You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/文件:user-manual.pdf)
+
+## Changelog
+
+### Version 3.4
+* Add Matlab on Manage Node
+
+### Version 3.3
+* Add conda advanced tutorial
+
+### Version 3.2
+* Add how to use Jupyter
+
+### Version 3.1
+* Add how to use remote desktop
+* Add how to use C++ documentation
+* Removed web browser access since it is super laggy
+* Disabled ssh between nodes since we are moving to slurm for GPU management
+* Clarified instructions on module load
+* Added instructions on using slurm interactively with srun
