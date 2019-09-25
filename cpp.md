@@ -21,19 +21,9 @@ A typical C++ project dependends on some other libraries, which should be
 installed system-wide. The installation needs sudo privileges. If you are
 common users, you can contact [zhaofeng-shu33](https://github.com/zhaofeng-shu33).
 
-## Python
+## Python Binding
 
-To develop Python binding for your C++ project, you need python development header files. If default finding fails by CMake, you can 
-specify it manually by
+To develop Python binding for your C++ project, Cython is needed. For complex binding, you need to customize your `setup.py` to build the extension.
 
-```bash
-cmake -DPYTHON_INCLUDE_DIRS=/usr/include/python3.6m/ ..
-```
-
-If you need `cmake3` to run in `setup.py`, you can use
-
-```bash
-CMAKE=cmake3 pip3 install --user -e .
-```
-
-Then you can read the environment variable in your python script.
+## Debug
+Command line debugger `gdb` can be used on the manager node. On Storage node, you can launch vscode and use the GUI debugging tool, which uses `gdb` internally but provide many convenient functionalities. 
