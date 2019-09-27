@@ -17,9 +17,12 @@ Some preinstalled libraries (for example `boost-1.53.0`) are built by gcc versio
 
 ## Dependencies
 
-A typical C++ project dependends on some other libraries, which should be
+A typical C++ project dependends on some other libraries, which is recommended to be
 installed system-wide. The installation needs sudo privileges. If you are
-common users, you can contact the server admin to install them. Once installed, many packages can be checked via `pkg-config`.
+common users, you can contact the server admin to install them. For some cases, you can download the prebuilt `rpm` or `deb` package and install them to 
+a custom directory. Then in you project you should specify this custom directory to your compiler.
+
+Once installed, many packages can be checked via `pkg-config`.
 For example, to see which compile flags are needed to use glib library, you can use:
 ```shell
 pkg-config --cflags glib-2.0
