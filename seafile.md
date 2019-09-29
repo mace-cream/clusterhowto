@@ -1,0 +1,1 @@
+使用ssh登录的用户名和密码登录 [seafile cloud storage](http://10.8.4.170:8030/)。
