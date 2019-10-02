@@ -27,5 +27,6 @@
 
     You should add `&` to each `srun`. Also, do not forget `wait` at the very end.
 
-    
+    After job finishes, you can check the detail by `sacct -j your_job_id`. It may shows how the job is decomposed into 2 tasks which are running in parallel.
 
+    ![](./images/slurm_job_2_task.png)

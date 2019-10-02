@@ -169,9 +169,10 @@ See [Configure Environment](http://10.8.4.170/wiki/index.php/Configure_the_envir
 
 For further detail you can check [python.md](./python.md).
 
-## 5. How to use GPUs
+## 5. How to use slurm 
 
-We will use SLURM to submit GPU jobs to the cluster. It automatically allocates GPU/CPU resources to you based on your requests. 
+We will use SLURM to submit jobs to the cluster. It automatically allocates GPU/CPU resources to you based on your requests. 
+This is the **only way to use the GPU resources** on our lab server.
 
 ### Using srun
 
@@ -259,12 +260,9 @@ scancel [jobID]
 
 Do NOT use `kill` to stop a slurm job! It will only stop the slurm process, but not the job itself. 
 
-You can pipeline your work by submitting multiple sbatch scripts. The jobs will be allocated on different GPUs that are available. For more information on how to use SLURM, see
+You can pipeline your work by submitting multiple sbatch scripts. The jobs will be allocated on different GPUs that are available. 
 
-* Official documentation: https://slurm.schedmd.com/documentation.html
-* A tutorial: https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html
-
-## 6. Useful stuff about slurm
+### Useful stuff about slurm
 You can find many useful tutorial about slurm from world wide web. Here are some tips:
 `pestat` prints Slurm cluster status with 1 line per node. 
 
@@ -273,6 +271,12 @@ You can find many useful tutorial about slurm from world wide web. Here are some
 Find out who is using all the resources with `showuserjobs`
 
 ![](images/tutorial04.png)
+
+For extra documentation about how to use slurm, you can check [slurm.md](./slurm.md) or 
+see extra online resources:
+
+* Official documentation: https://slurm.schedmd.com/documentation.html
+* A tutorial: https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html
 
 ## 7. Further documentation
 You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/文件:user-manual.pdf)
