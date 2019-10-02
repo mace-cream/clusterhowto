@@ -4,7 +4,7 @@ I recommend to use higher version of `g++`. You can type `module load gcc/8.2.0`
 
 ## CMake
 
-The version of `cmake` is **2.8**. To use higher version, you need cmake3.
+The version of `cmake` is **2.8**. To use higher version, you can use `cmake3`.
 
 Our cluster cannot identify loaded module like higher version of `g++`. To use
 it in cmake, you need to specify the abosolute path like the following.
