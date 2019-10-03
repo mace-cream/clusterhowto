@@ -1,12 +1,8 @@
 # How to Use Our New Cluster 
 
-
 ---------------------------------------
 
-Known issues:
 
-* /data1 and /data2 are not yet writable to all users
-* Needs more testing and documentation on using multiple GPUs 
 
 ## 1. Access the cluster
 
@@ -37,10 +33,6 @@ The password change is shared, which means your login password to other machines
 ### Remote Desktop
 See [vnc](./vnc.md)
 
-### Matlab
-If you connect the server via X11 or vnc desktop, you can invoke matlab by `proxychains4 matlab -nodesktop`. Notice this software is experimental supported by lab2c web admin.
-Matlab may not start as you want.
-![](matlab_terminal.png)
 
 ### Webpage
 Our lab homepage is located at [http://10.8.4.170](http://10.8.4.170). From there you can find the link to our lab's wiki, gitlab and jupyter etc.
