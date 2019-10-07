@@ -15,3 +15,5 @@ to install again `gitlab-runner` as it is already available on our manage node. 
 1. Using `srun` to submit your job in `.gitlab.yml` configuration file.
 
 1. Check the CICD page of the project.
+
+For more information, please check [cicd doc](http://10.8.4.170:88/help/ci/yaml/README.md).
