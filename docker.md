@@ -32,3 +32,8 @@ Finnaly, run the `docker` command with custom args:
 ```shell
 docker build -t your_target --build-arg A_MIRROR=1 .
 ```
+
+## Remove images with `none` tag
+```shell
+docker rmi $(docker images --filter "dangling=true" -q)
+```
