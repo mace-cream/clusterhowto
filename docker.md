@@ -7,3 +7,6 @@ Currently, you can only use docker in the manage node without GPU support.
 ```shell
 docker run -it --rm --user="$(id -u):$(id -g)" your_image
 ```
+
+## Build docker images using mainland mirror
+to be written
