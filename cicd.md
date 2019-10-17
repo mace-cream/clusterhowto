@@ -16,4 +16,16 @@ to install again `gitlab-runner` as it is already available on our manage node. 
 
 1. Check the CICD page of the project.
 
+## How to create multiple gitlab-runner instance on the same machine?
+The default runner installed on our manage node is a service, you can check it by
+```shell
+systemctl status gitlab-runner
+```
+Since this runner registers several jobs for [gitlab.com](https://gitlab.com), it takes much longer time to check the job status for each registered runner (due to overseas speed limitation).
+Therefore it is benificial to install another gitlab-runner instance on manage node.
+
+To do this, we resort to the docker solution. That is, we start the gitlab-runner as a docker service. The configuration file is located at [docker-compose.yml](http://10.8.4.170:88/zhaofeng-shu33/lab2cnew/blob/master/docker-compose.yml).
+After using `docker-compose start` to start the service. We can register for each project we need. However, since this runner is a Docker container, the shell executor is within the
+container environment and is not usefully. We need to use the Docker executor as well.
+
 For more information, please check [cicd doc](http://10.8.4.170:88/help/ci/yaml/README.md).
