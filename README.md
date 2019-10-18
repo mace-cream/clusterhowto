@@ -65,7 +65,7 @@ Our cluster has 5 nodes (servers)
 | nfs      | Yes                 | 10.8.4.172 | Ubuntu 16.04 |
 
 * `bcm`:  management node  
-* `node01` : computing node with 8 TITAN V GPUs, 256GB RAM
+* `node01` : computing node with 8 TITAN V GPUs, 56 CPUs, 256GB RAM
 * `node02`: computing node with 8 TITAN V GPUs, 256GB RAM
 * `node03` : computing node with 4 Telsa K80 GPU cores and 2 TITAN V GPUs, 128GB RAM, fastest CPU among all nodes
 * `nfs`: storage node that hosts the 77T file system `/home`
