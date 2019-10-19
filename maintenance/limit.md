@@ -6,3 +6,6 @@ We set all logged-in user to use 9.76GB memory per process.
 This is a hard requirement.
 
 # CPU Limit
+see `/usr/local/bin/cpu_limit.sh`.
+I set this to a root cronjob, see by `sudo crontab -e`.
+This cronjob run `cpu_limit.sh` every minute and check whether there are processes comsumes more than 14 CPUs.
