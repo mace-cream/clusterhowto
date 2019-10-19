@@ -1,7 +1,9 @@
 # How to Use Our New Cluster 
 
 ---------------------------------------
+## Important Notice
 
+Each process on manage node is allowed 10 GB memory and 14 CPUs.
 
 
 ## 1. Access the cluster
