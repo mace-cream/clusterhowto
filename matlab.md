@@ -16,3 +16,4 @@ Matlab may not start as you want.
 ```shell
 proxychains4 matlab -nodesktop -nosplash -nodisplay -r "run('path/to/your/script.m');exit;"
 ```
+You can use `srun` to submit matlab job.
