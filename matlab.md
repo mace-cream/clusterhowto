@@ -3,6 +3,7 @@ This software is disabled by default. If you want to use, contact the cluster ad
 
 ## GUI
 Warning: Do not use GUI mode to run large-scale experiment. GUI is run on managenode and will use all CPUs if parallelism is enabled. This will cause the unstability of the system.
+
 If you connect the server via X11 or vnc desktop, you can start matlab by `proxychains4 matlab`.
 ![](./images/server_matlab.png)
 
