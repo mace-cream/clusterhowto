@@ -1,5 +1,5 @@
 # Matlab
-This software is disabled by default. If you want to use, contact the cluster admin.
+If you want to use, type `module load matlab`.
 
 ## GUI
 Warning: Do not use GUI mode to run large-scale experiment. GUI is run on managenode and will use all CPUs if parallelism is enabled. This will cause the unstability of the system.
@@ -16,4 +16,6 @@ Matlab may not start as you want.
 ```shell
 proxychains4 matlab -nodesktop -nosplash -nodisplay -r "run('path/to/your/script.m');exit;"
 ```
-You can use `srun` to submit matlab job.
+
+## Large Scale Computation
+You can use `srun` to submit matlab job to compute node.
