@@ -28,7 +28,7 @@ ssh -L 10.8.4.170:3389:10.1.1.4:3389 username@10.8.4.170
 然后打开远程桌面输入地址 10.8.4.170， 公共账号用户名：lab2c，密码：guest，是 Win10 普通用户。
 后连接即可。RDP 会话过程 SSH 会话不能中断。
 
-连接成功后可用 Jupyter 输入自己的用户名和密码开启校本部VPN，以使用服务器集群上的 Matlab， Windows 虚拟机未安装 Matlab。
+连接成功后可用 Juniper客户端 输入自己的用户名和密码开启校本部VPN，以使用服务器集群上的 Matlab， Windows 虚拟机未安装 Matlab。
 
 Known issue: Only One user is allowed each time. See [rdpwrapper](https://github.com/stascorp/rdpwrap) for a possible solution.
 
