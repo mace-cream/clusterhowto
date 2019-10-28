@@ -18,7 +18,14 @@ Windows 支持ssh 连接和rdp 连接，下图是用 rdp连接 windows 的截图
 之前连接的效果图
 ![](./screenshot2.png)
 
-Windows 10 虚拟机原来的网络配置是用 NAT 方法将远程桌面 3306 端口暴露给外网，后来由于要支持 matlab 的认证，改用 Bridge 方法加入 10.1.1.1/24 内网，虽然3306端口还开着，但原来配置的远程桌面不能使用了。目前可以用 VNC 或 VMWare （先登录 First Type 远程桌面）的方式连接。
+Windows 10 虚拟机原来的网络配置是用 NAT 方法将远程桌面 3306 端口暴露给外网，后来由于要支持 matlab 的认证，改用 Bridge 方法加入 10.1.1.1/24 内网，虽然3306端口还开着，但原来配置的远程桌面不能使用了。目前可以用 VMWare （先登录 First Type 远程桌面）的方式连接。
+
+### 连接Windows 远程桌面
+在 windows  电脑 上首先 ssh 登陆管理节点，输入
+```shell
+ssh -L 10.8.4.170:3389:10.1.1.4:3389 username@10.8.4.170
+```
+打开远程桌面输入 10.8.4.170地址后连接即可。
 
 * MacOS High Serria (10.13)（4核8GB内存，64GB SSD本机硬盘，暂无公共账号），已安装 command line tools, `Homebrew`
 
