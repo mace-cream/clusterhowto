@@ -25,7 +25,7 @@ Windows 10 虚拟机原来的网络配置是用 NAT 方法将远程桌面 3306 �
 ```shell
 ssh -L 10.8.4.170:3389:10.1.1.4:3389 username@10.8.4.170
 ```
-打开远程桌面输入 10.8.4.170地址后连接即可。
+打开远程桌面输入 10.8.4.170地址后连接即可。Only One user is allowed each time. See [rdpwrapper](https://github.com/stascorp/rdpwrap) for a possible solution.
 
 * MacOS High Serria (10.13)（4核8GB内存，64GB SSD本机硬盘，暂无公共账号），已安装 command line tools, `Homebrew`
 
