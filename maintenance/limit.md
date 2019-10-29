@@ -2,7 +2,7 @@ This document applies to manage node only. This configuration is used for abuse 
 
 # Memory Limit
 see `/etc/security/limits.conf`.
-We set all logged-in user to use 9.76GB memory per process.
+We set all logged-in user to use 12.6GB memory per process.
 This is a hard requirement.
 
 # CPU Limit
