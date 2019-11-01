@@ -5,6 +5,16 @@
 
 Each process on manage node is allowed 10 GB memory and 14 CPUs.
 
+## Temporary Resource Adjustment Notice:
+
+From now to end of Nov, we have decided to segment our 3 GPU clusters. Node1 and node3 are reserved for students submitting papers (please let us know you're submitting paper before using these two nodes); node02 is for all other students. The codes for submitting jobs have also changed, as follows:
+
+1) For students submitting papers: add -w node01 or -w node03, for example: srun -w node01 --gres=gpu:1 job.py
+
+2) For other students: add -w node02, for example: srun -w node02 --gres=gpu:1 job.py
+
+We have also altered the GPU resourse allocations: for students submitting papers, you can use up to 8 GPUs simultaneously; for other students, you can use up to 3 GPUs simultaneously
+
 
 ## 1. Access the cluster
 
