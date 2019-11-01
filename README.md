@@ -15,6 +15,7 @@ From now to end of Nov, we have decided to segment our 3 GPU clusters. Node1 and
 
 We have also altered the GPU resourse allocations: for students submitting papers, you can use up to 8 GPUs simultaneously; for other students, you can use up to 3 GPUs simultaneously
 
+Note: Programs not using the appropriate node may be canceled by the admin
 
 ## 1. Access the cluster
 
