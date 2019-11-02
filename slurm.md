@@ -36,3 +36,5 @@
     ```shell
     srun --nodelist=node02 ps -u feima -o pid,user,%mem,%cpu
     ```
+5. submit array jobs
+   See usage example of [array jobs](https://wiki.anunna.wur.nl/index.php/Array_jobs)
