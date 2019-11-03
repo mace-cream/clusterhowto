@@ -8,6 +8,8 @@
 
     in your script.
 
+    For `srun`, you can use `srun -w node01 echo "hello world".
+    
 2. If you need more cpu resources to run your program, add
 
    ```shell
@@ -15,6 +17,7 @@
    ```
 
    That is, you require 4 cpus to run your program.
+   By default, you only have one physical cpu if not specified. This cpu has 2 logical cores. You can request maximum 32 cpus.
    
 3. You can submit several serial programs within one job and run them in parallel.
 
@@ -38,3 +41,7 @@
     ```
 5. submit array jobs
    See usage example of [array jobs](https://wiki.anunna.wur.nl/index.php/Array_jobs)
+
+6. neural network library using cpus
+   If your gpu resource limit is hit or you want to train your neural network using CPU. You can explicitly do this by specificying
+   some environment variable. See [Python Guide](./python.md) for detail.
