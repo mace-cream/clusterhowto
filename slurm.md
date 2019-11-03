@@ -15,7 +15,8 @@
    ```shell
    #SBATCH -c 4
    ```
-
+   Or you can use `srun -c 4 your_multi_threaded_or_multi_process_program`.
+   
    That is, you require 4 cpus to run your program.
    By default, you only have one physical cpu if not specified. This cpu has 2 logical cores. You can request maximum 32 cpus.
    
