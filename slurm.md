@@ -38,7 +38,7 @@
 4. Check cpu and memory usage of other nodes
 
     ```shell
-    srun --nodelist=node02 ps -u feima -o pid,user,%mem,%cpu
+    srun --nodelist=node02 ps -u feima -o pid,user,%mem,%cpu,cmd
     ```
 5. submit array jobs
    See usage example of [array jobs](https://wiki.anunna.wur.nl/index.php/Array_jobs)
