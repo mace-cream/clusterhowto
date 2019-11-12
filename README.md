@@ -3,7 +3,8 @@
 ---------------------------------------
 ## Important Notice
 
-Each process on manage node is allowed 10 GB memory and 14 CPUs.
+* Each process on manage node is allowed 10 GB memory and 14 CPUs.
+* Add `-t 1024` if you request GPU resources. Your program is allowed to run 1024 minutes in maximum.
 
 ## Temporary Resource Adjustment Notice:
 
