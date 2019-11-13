@@ -46,3 +46,9 @@
 6. neural network library using cpus
    If your gpu resource limit is hit or you want to train your neural network using CPU. You can explicitly do this by specificying
    some environment variable. See [Python Guide](./python.md) for detail.
+
+7. Interactive Shell
+   ```shell
+   srun --gres=gpu:1 --pty bash
+   ```
+   You can use this method to debug your GPU program. Please quit it after your debugging session. This slurm job will also occupy one GPU.
