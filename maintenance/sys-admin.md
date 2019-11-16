@@ -10,5 +10,5 @@ reboot node03
 ```
 
 ## Swap Space
-Node03 has node swap space due to etcd installation on `node03`. That is node03 has etcd role in kubernetes cluster.
+Node03 has no swap space due to etcd installation on `node03`. That is node03 has etcd role in kubernetes cluster.
 The swap space can be checked with `free -m` command when logged in.
