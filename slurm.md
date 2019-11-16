@@ -49,6 +49,8 @@
 
 7. Interactive Shell
    ```shell
-   srun --gres=gpu:1 --pty bash
+   srun --gres=gpu:1 -t 500 --pty bash
    ```
    You can use this method to debug your GPU program. Please quit it after your debugging session. This slurm job will also occupy one GPU.
+   You can use `tmux` in this temporary session to open multiple windows. This is useful when you need to inspect the resource usage of current node with `top` or `/cm/local/apps/cuda/libs/current/bin/nvidia-smi`.
+   
