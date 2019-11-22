@@ -113,8 +113,8 @@ This adds anaconda 3 to your current session.  Now you can use Python 3.6 by typ
 module initadd anaconda3/py3
 ```
 
-You can also directly add the module to your session profile. i.e.  add the following line to the end of `~/.bashrc` ( a script that runs at the start of every new terminal session)
-
+You can also directly add the module to your session profile. i.e.  add the following line to the end of `~/.bashrc` ( a script that runs at the start of every new terminal session).
+If you use `zsh`, put the command in `~/.zshrc`.
 ``` 
 module load anaconda3/py3 
 ```
