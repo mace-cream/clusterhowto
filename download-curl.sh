@@ -8,7 +8,7 @@ end_id=$((SLURM_ARRAY_TASK_ID+1))
 total_id=$((SLURM_ARRAY_TASK_MAX+1))
 echo $total_bytes
 echo $total_id
-start=$((start_id * total_bytes / total_id + 1))
-end=$((end_id * total_bytes / total_id))
+start=$((start_id * total_bytes / total_id))
+end=$((end_id * total_bytes / total_id -1))
 #echo $filename
 curl -H "Range: bytes=$start-$end" $url -o $start-$end.partial.zip
