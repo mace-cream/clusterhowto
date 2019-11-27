@@ -10,6 +10,6 @@ echo $total_bytes
 echo $total_id
 start=$((start_id * total_bytes / total_id))
 end=$((end_id * total_bytes / total_id -1))
-#echo $filename
 filename=$(printf %02d $start_id).partial.zip
 curl -H "Range: bytes=$start-$end" $url -o $filename
+# after the downloading complete, please use `cat *.partial.zip > total.zip` to join the partial files together
