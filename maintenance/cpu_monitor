@@ -9,11 +9,9 @@ for pid in psutil.pids():
     try:
         p = psutil.Process(pid)
         if int(p.memory_info()[0]) > 1073741824 * 10:
-            print datetime.now()
-            print pid
-            os.kill(pid,signal.SIGKILL)
-            print kill,pid,p.username(),p.cmdline()
+	    print datetime.now(),kill,pid,p.username(),p.cmdline()
+            os.kill(pid,signal.SIGKILL)         
     except OSError:
         pass
     except:
-        print "kill failed"
+        pass
