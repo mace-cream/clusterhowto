@@ -1,0 +1,19 @@
+#! /usr/bin/python
+# memory < 10g
+import psutil
+import os
+import sys
+import signal
+from datetime import datetime
+for pid in psutil.pids():
+    try:
+        p = psutil.Process(pid)
+        if int(p.memory_info()[0]) > 1073741824 * 10:
+            print datetime.now()
+            print pid
+            os.kill(pid,signal.SIGKILL)
+            print kill,pid,p.username(),p.cmdline()
+    except OSError:
+        pass
+    except:
+        print "kill failed"
