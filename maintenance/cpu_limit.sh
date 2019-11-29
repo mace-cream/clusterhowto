@@ -8,6 +8,6 @@ for i in "${proc_list[@]}"; do
     cpu_usage_percentage=${process_cpu_list[1]}
     compare_result=$(awk 'BEGIN{ print '$cpu_usage_percentage'<'$result' }')
     if [ ! "$compare_result" -eq 1 ]; then
-      nohup /usr/local/bin/cpulimit -b -p $process_id -l $result -z
+      kill $process_id
     fi
 done
