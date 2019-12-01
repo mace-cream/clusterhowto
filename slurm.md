@@ -62,6 +62,10 @@
    # compile your programs
    salloc -N 2 mpirun your_mpi_program
    ```
-   
+   If you need to use hybrid programming (e.g. OpenMP + MPI), you need to enable specifically:
+   ```shell
+   salloc -N 2 -c 8
+   mpirun -n 2 --cpus-per-rank 4 --oversubscribe nvtc/nvtc-variant -f /home/dataset/triangle_counting_dataset/s28.e15.kron.edgelist.bin
+   ```
 9. Unbuffer
    If you are using `srun` to run your commands you can use the `--unbuffered` option which disables the output buffering.
