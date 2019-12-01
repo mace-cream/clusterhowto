@@ -67,5 +67,9 @@
    salloc -N 2 -c 8
    mpirun -n 2 --cpus-per-rank 4 --oversubscribe nvtc/nvtc-variant -f /home/dataset/triangle_counting_dataset/s28.e15.kron.edgelist.bin
    ```
+   You can have one line
+   ```shell
+   salloc -N 2 -c 6 mpirun -n 2 --cpus-per-rank 3 --oversubscribe ./hybridhello
+   ```
 9. Unbuffer
    If you are using `srun` to run your commands you can use the `--unbuffered` option which disables the output buffering.
