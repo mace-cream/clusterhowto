@@ -2,12 +2,18 @@
 目前服务器部分同学（2018级及之前）的账号存放在管理节点的 LDAP 数据库中，包括 NFS 的账号也在。
 
 不在 LDAP 数据库中的同学账号无法ssh登录存储节点和管理节点 jupyter。
-# 查询
+
+## Local user management
+```
+userdel username # preserve home
+```
+
+# Search
 ```
 ldapsearch -x 'uid=weijiafeng'
 ```
 
-# 重置密码
+# Reset Password
 ```
 ldappasswd -s 123456 -W -D 'cn=root,dc=cm,dc=cluster' -x 'uid=weijiafeng,dc=cm,dc=cluster'
 ```
