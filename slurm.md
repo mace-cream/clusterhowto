@@ -62,3 +62,6 @@
    # compile your programs
    salloc -N 2 mpirun your_mpi_program
    ```
+   
+9. Unbuffer
+   If you are using `srun` to run your commands you can use the `--unbuffered` option which disables the output buffering.
