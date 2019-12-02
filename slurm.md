@@ -65,11 +65,11 @@
    If you need to use hybrid programming (e.g. OpenMP + MPI), you need to enable specifically:
    ```shell
    salloc -N 2 -c 8
-   mpirun -n 2 --cpus-per-rank 4 --oversubscribe nvtc/nvtc-variant -f /home/dataset/triangle_counting_dataset/s28.e15.kron.edgelist.bin
+   mpirun -n 2 --cpus-per-rank 4 --oversubscribe --bind-to none nvtc/nvtc-variant -f /home/dataset/triangle_counting_dataset/s28.e15.kron.edgelist.bin
    ```
    You can have one line
    ```shell
-   salloc -N 2 -c 6 mpirun -n 2 --cpus-per-rank 3 --oversubscribe ./hybridhello
+   salloc -N 2 -c 6 mpirun -n 2 --cpus-per-rank 3 --bind-to none --oversubscribe ./hybridhello
    ```
 9. Unbuffer
    If you are using `srun` to run your commands you can use the `--unbuffered` option which disables the output buffering.
