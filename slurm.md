@@ -71,5 +71,14 @@
    ```shell
    salloc -N 2 -c 6 mpirun -n 2 --cpus-per-rank 3 --bind-to none --oversubscribe ./hybridhello
    ```
+   If `mpirun` is invoked using `sbatch`, the sample file for `run.sh` is
+   ```bash
+   #!/bin/bash
+   #SBATCH -N 2
+   #SBATCH --gres=gpu:1
+   #SBATCH -t 500
+   #SBATCH -c 8
+   mpirun -n 2 --bind-to none --cpus-per-rank 4 --oversubscribe /home/feng/triangle_counting_gpu_v2/build/nvtc/nvtc-variant -f /home/dataset/soc-LiveJournal1.bin
+   ```
 9. Unbuffer
    If you are using `srun` to run your commands you can use the `--unbuffered` option which disables the output buffering.
