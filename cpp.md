@@ -4,12 +4,12 @@ I recommend to use higher version of `g++`. You can type `module load gcc/8.2.0`
 
 ## CMake
 
-The version of `cmake` is **2.8**. To use higher version, you can use `cmake3`.
+The version of `cmake` is **2.8**. To use higher version, you can use `module load cmake/3.12.3`.
 
 Our cluster cannot identify loaded module like higher version of `g++`. To use
 it in cmake, you need to specify the abosolute path like the following.
 ```bash
-cmake3 -DCMAKE_CXX_COMPILER=/cm/local/apps/gcc/8.2.0/bin/g++ ..
+cmake -DCMAKE_CXX_COMPILER=/cm/local/apps/gcc/8.2.0/bin/g++ ..
 ```
 ## ABI Version
 
