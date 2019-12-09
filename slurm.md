@@ -85,4 +85,4 @@
 
 10. mpich
    Run `mpich` program is similar but different with `openmpi`. First you need load `mpich/ge/gcc/64/3.3`, then compile your programs with `mpicc` provided by `mpich`. Finally run
-   your program with `srun -N 2 mpich_hello`.
+   your program with `srun -N 2 --mpi=pmi2 your_program`.
