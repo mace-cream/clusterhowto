@@ -56,7 +56,7 @@
    You can use `tmux` in this temporary session to open multiple windows. This is useful when you need to inspect the resource usage of current node with `top` or `/cm/local/apps/cuda/libs/current/bin/nvidia-smi`.
    Notice that all your tmux sessions are killed if you quit the shell. This behaviour is different with normal tmux usage.
    
-8. Mpi
+8. openmpi
    ```shell
    module load openmpi/gcc/64/1.10.7
    # compile your programs
@@ -82,3 +82,7 @@
    ```
 9. Unbuffer
    If you are using `srun` to run your commands you can use the `--unbuffered` option which disables the output buffering.
+
+10. mpich
+   Run `mpich` program is similar but different with `openmpi`. First you need load `mpich/ge/gcc/64/3.3`, then compile your programs with `mpicc` provided by `mpich`. Finally run
+   your program with `srun -N 2 mpich_hello`.
