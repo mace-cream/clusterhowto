@@ -1,6 +1,9 @@
 # this script is used to check whether username and password are
 # the same for given ip and port
+
+# How to use this script on our server
 # module load anaconda2/py2
+# pip install --user ssh2-python
 # python verify_password.py
 import socket
 from ssh2.session import Session
