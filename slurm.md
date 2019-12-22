@@ -86,3 +86,7 @@
 10. mpich
    Run `mpich` program is similar but different with `openmpi`. First you need load `mpich/ge/gcc/64/3.3`, then compile your programs with `mpicc` provided by `mpich`. Finally run
    your program with `srun -N 2 --mpi=pmi2 your_program`.
+
+11. Request nodes unavailable
+   In some cases when some programs are running on `node01` and GPU is used out. Then you want to use CPU of `node01` to do some computation. You find your cpu job is pending.
+   You can add the time limit to make your job run. That is `srun -t 500 -w node01 python --version`.
