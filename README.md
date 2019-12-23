@@ -30,6 +30,10 @@ On Mac client, you can use the terminal to connect to the server. The syntax is 
 
 * The default password is `123456`
 
+We also recommand [VSCode](https://code.visualstudio.com/), which combines code editor, shell, git control and debug
+tools all-in-one. With the help of Remote-SSH extension of VSCode, you can manage your project directly on cluster as it is in your local. You can install 
+many other extensions for your preference, such as Language support (Python/Matlab/C++/...), SFTP and UI Theme.
+
 IMPORTANT: Once you log in, reset password using the passwd tool and follow the prompt.  
 
 ```bash
@@ -115,7 +119,7 @@ To make your code work on the cluster, you will likely need additional modules, 
 
 - `cuda90/toolkit/9.0.176` is needed for NVIDIA tools  
 - `cudnn/7.0` is needed for using the GPUs for deep learning
-- `openmpi` is for parallel processing, also used by deep learning libraries such as tensorflow   
+- `openmpi` is for parallel processing  
 
 Here is a sample `.bashrc` file that include all the above packages:
 
