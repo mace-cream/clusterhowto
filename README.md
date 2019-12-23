@@ -11,6 +11,7 @@
   You should apply for more GPUs consulting with Yang Li.
 
 ## 1. Access the cluster
+If you are outside Nanshan Park, please turning on the [institute vpn](vpn.md) first.
 
 ### Shell
 On Windows client, [ModaXterm](https://mobaxterm.mobatek.net/) is recommended though it is a commercial freeware. It integrates SFTP and SSH so that you can view and edit your file 
@@ -283,7 +284,16 @@ see extra online resources:
 ## 7. Further documentation
 You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/文件:user-manual.pdf)
 
+## 8. Further questions
+You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.4.170:88/yang/clusterhowto/issues). For instant communication please join the [slack](https://join.slack.com/t/lab2c/shared_invite/enQtODQyMTY4OTcyNTMwLWRkOTlkYmM2MWI3NGYzOWMwYTRkYzEzMTBjNjcxMWMxNTMxZjg2N2U1YzE5ZjI4YTE3ZTQ2ZWU2YzEyODNmMmU) channel of our lab.
+WeChat is not recommended to ask technical questions.
+
 ## Changelog
+
+### Version 3.5
+* Add many slurm tips
+* Add github and intranet gitlab support.
+* Add slack invitation link
 
 ### Version 3.4
 * Add Matlab on Manage Node
