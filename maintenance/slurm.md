@@ -18,3 +18,11 @@ the configuration file should be modified to suit such purpose. Otherwise the sl
 ```shell
 cp /data2/gres.conf /etc/slurm/gres.conf
 ```
+
+## How to undrain a node
+Using `root` account. 
+```shell
+scontrol
+update NodeName=node01 State=RESUME
+```
+See [how-to-undrain-slurm-nodes-in-drain-state](https://stackoverflow.com/questions/29535118/how-to-undrain-slurm-nodes-in-drain-state)
