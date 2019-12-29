@@ -1,7 +1,11 @@
 #!/bin/bash
-# curl --head url Content-Length:  13923888724
+# Usage: srun --array=0-N download-curl.sh file_url
+# replace N with the number of thread you want
+# and file_url with the url you want
+# The file server should support partial downloading for multithreading download to work
+# Current limitation: the file prefix is hard coded, e.g. zip format.
 set -e -x
-url=https://cvml.ist.ac.at/AwA2/AwA2-base.zip
+url=$1
 total_bytes=$(curl --head $url | grep Content-Length | awk '{split($0,a," ");print a[2]}' | awk '{print substr($0, 1, length($0)-1)}') 
 start_id=$SLURM_ARRAY_TASK_ID
 end_id=$((SLURM_ARRAY_TASK_ID+1))

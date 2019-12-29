@@ -43,6 +43,7 @@
 5. submit array jobs
    See [Introduction to array jobs](https://slurm.schedmd.com/job_array.html). 
    For 2d array jobs. see usage example of [2d array jobs](https://wiki.anunna.wur.nl/index.php/Array_jobs)
+   You can use this techniques to download file in multi-threaded way. See [download-curl.sh](./download-curl.sh) for example.
 
 6. neural network library using cpus
    If your gpu resource limit is hit or you want to train your neural network using CPU. You can explicitly do this by specificying
