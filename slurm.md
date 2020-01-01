@@ -91,3 +91,9 @@
 11. Request nodes unavailable
    In some cases when some programs are running on `node01` and GPU is used out. Then you want to use CPU of `node01` to do some computation. You find your cpu job is pending.
    You can add the time limit to make your job run. That is `srun -t 500 -w node01 python --version`.
+
+12. Submit graphics jobs
+   You can use `slurm` to request graphics jobs, for example `xterm`. First you need to use `ssh-keygen -m pem` on our server to generate default 
+   `~/.ssh/id_rsa.pub` and `~/,ssh/id_rsa`. You cannot specify the paraphrase. Then you should add `id_rsa.pub` to `~/.ssh/authorized_keys`. You can automatically
+   do so by `ssh-copy-id username@10.8.4.172`.
+   Finally make sure you `ssh -Y` to our server. Then use `srun --pty --x11 xterm` and enjoy it.
