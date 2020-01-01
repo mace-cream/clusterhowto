@@ -8,8 +8,8 @@
 
 |QoS|Users|\#GPUs|Priority|Command Example|
 |--|--|--|--|
-|normal (default)|Everyone|3|High|`srun --gres=gpu:1 -t 100 python main.py`|
-|high|Applicants|7|Normal|`srun --qos=high --gres=gpu:1 -t 100 python main.py`|
+|normal (default)|Everyone|3|High|srun --gres=gpu:1 -t 100 python main.py|
+|high|Applicants|7|Normal|srun --qos=high --gres=gpu:1 -t 100 python main.py|
 
 The high QoS have 7 extra GPUs for students submitting papers (and therefore 10 avaliable in total). You can apply it by consulting with Yang Li. 
 The Priority decide the order of the queue of jobs waiting to be scheduled. And jobs of same Priority will follow a FIFO schedule.
