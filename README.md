@@ -1,14 +1,18 @@
 # How to Use Our New Cluster 
 
 ---------------------------------------
-## Important Notice
+## Quality of Sevice (QoS)
 
-* Each process on manage node is allowed 10 GB memory and 14 CPUs.
-* Add `-t 1024` if you request GPU resources. Your program is allowed to run 1024 minutes in maximum.
+* Task directly running on manage node is allowed to use up to 10 GB memory and 14 CPUs.
+* Task submitted by Slurm can choose different Quality of Sevice (QoS):
 
-  We can alter the GPU resourse allocations for students submitting papers, you can use up to 8 GPUs simultaneously; for other students, you can use up to 3 GPUs simultaneously
+|QoS|Users|\#GPUs|Priority|Command Example|
+|:-:|:-:|:-:|:-:|
+|normal (default)|Everyone|3|High|`srun --gres=gpu:1 -t 100 python main.py`|
+|high|Applicants|7|Normal|`srun --qos=high --gres=gpu:1 -t 100 python main.py`|
 
-  You should apply for more GPUs consulting with Yang Li.
+  The high QoS have 7 extra GPUs for students submitting papers (and therefore 10 avaliable in total). You can apply it by consulting with Yang Li. 
+  The Priority decide the order of the queue of jobs waiting to be scheduled. And jobs of same Priority will follow a FIFO schedule.
 
 ## 1. Access the cluster
 If you are outside Nanshan Park, please turning on the [institute vpn](vpn.md) first.
