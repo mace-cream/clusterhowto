@@ -271,7 +271,7 @@ You can pipeline your work by submitting multiple sbatch scripts. The jobs will 
 
 ### Useful stuff about slurm
 You can find many useful tutorial about slurm from world wide web. Here are some tips:
-`pestat` prints Slurm cluster status with 1 line per node. 
+`pestat -G` prints Slurm cluster status with 1 line per node. 
 
 ![](images/tutorial05.png)
 
