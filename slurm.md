@@ -97,3 +97,6 @@
    `~/.ssh/id_rsa.pub` and `~/,ssh/id_rsa`. You cannot specify the paraphrase. Then you should add `id_rsa.pub` to `~/.ssh/authorized_keys`. You can automatically
    do so by `ssh-copy-id username@10.8.4.172`.
    Finally make sure you `ssh -Y` to our server. Then use `srun --pty --x11 xterm` and enjoy it.
+
+13. Debug mpi programs within slurm
+   For openmpi, first using `salloc -N 2 --x11` to allocate nodes. Then use `mpirun -n 2 xterm -e gdb --args nvtc/nvtc-variant -f test_io_nvgraph.bin` to launch user programs within `xterm`.
