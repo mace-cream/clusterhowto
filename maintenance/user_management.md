@@ -9,6 +9,11 @@ userdel username # preserve home
 ```
 
 # Search
+All users:
+```shell
+ldapsearch -LLL -x -b dc=cm,dc=cluster -s sub "(objectclass=posixAccount)" dn
+```
+One user:
 ```
 ldapsearch -x 'uid=weijiafeng'
 ```
