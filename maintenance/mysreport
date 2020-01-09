@@ -1,0 +1,27 @@
+#! /usr/bin/python
+import os
+import sys
+
+if len(sys.argv) == 1:
+    command = 'sh sreport_new.sh'
+elif len(sys.argv) == 2:
+    command = 'sh sreport_new.sh ' + str(sys.argv[1])
+else:
+    print 'argv are too much'
+    command = 'sh sreport_new.sh'
+process = os.popen(command)
+output = process.read()
+process.close()
+row = str(output).split('\n')
+print '{0:<20}'.format('User'), '\t\t', '{0:<20}'.format('Used/Min')
+result_dict = {}
+for column in filter(None, row[8:]):
+    column = filter(None, column.split(' '))
+    if column[2] == 'gres/gpu':
+        continue
+    result_dict[str(column[2])] = int(column[-1])
+    # print '{0:<20}'.format(column[2]), '\t\t', '{0:<20}'.format(column[-1])
+sorted_dict = sorted(result_dict.items(), key=lambda d: d[1],reverse=True)
+
+for item in sorted_dict:
+    print '{0:<20}'.format(item[0]), '\t\t', '{0:<20}'.format(item[1])
