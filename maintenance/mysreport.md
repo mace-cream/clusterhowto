@@ -1,6 +1,6 @@
 ### How to show the GPU usage report
 ***
-Use the folling command to show the usage report from a specific time. (`module load slurm` first.)
+Use the following command to show the usage report from a specific time. (`module load slurm` first.)
 
 ```
 mysreport 2019-10-01
