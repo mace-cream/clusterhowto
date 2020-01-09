@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: srun --array=0-N download-curl.sh file_url
+# Usage: sbatch --array=0-N download-curl.sh file_url
 # replace N with the number of thread you want
 # and file_url with the url you want
 # The file server should support partial downloading for multithreading download to work
