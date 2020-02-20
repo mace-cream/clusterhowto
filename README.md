@@ -3,7 +3,7 @@
 ---------------------------------------
 ## Quality of Sevice (QoS)
 
-* Task directly running on manage node is allowed to use up to 10 GB memory and 14 CPUs.
+* Task directly running on manage node is allowed to use up to 10 GB memory and 14 CPUs. See [cron.md](./cron.md) for detail.
 * Task submitted by Slurm can choose different Quality of Sevice (QoS):
 
 |        QoS       |    Users   | \#GPUs | Priority |                        Example                       |

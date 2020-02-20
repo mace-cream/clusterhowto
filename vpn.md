@@ -21,7 +21,7 @@ Windows 和移动端下载地址 在 [https://sslvpn.tsinghua.edu.cn](https://ss
 Mac 下载地址学校官方没有提供，可以自行搜索，这里给出开发这个客户端软件的公司提供的下载地址（国外网站，客户端下载速度较慢）：
 * [MacOS](http://trial.pulsesecure.net/clients/ps-pulse-mac-9.0r4.0-b1731-installer.dmg)
 
-官网上下载的Linux 的客户端，无法成功使用；[openconnect](https://www.infradead.org/openconnect/index.html) 可以用：
+官网上下载的Linux 的客户端，无法成功使用；[openconnect](https://www.infradead.org/openconnect/index.html) 可以用（不可用了）：
 ```
 sudo /usr/local/sbin/openconnect --protocol=nc https://sslvpn.tsinghua.edu.cn
 ```

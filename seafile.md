@@ -1,5 +1,12 @@
 使用ssh登录的用户名和密码登录 [seafile cloud storage](http://10.8.4.170:8030/)。
 
+## Service starting up
+In the case where seafile and seahub services are down, we can reboot it manually by
+```bash
+cd /home/feng/seafile-server/seafile-server-7.0.5
+bash seafile.sh start
+bash seahub.sh start
+```
 
 ## Advantages
 
