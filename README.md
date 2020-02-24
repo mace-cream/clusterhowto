@@ -19,7 +19,7 @@ If you are outside Nanshan Park, please turning on the [institute vpn](vpn.md) f
 
 ### Shell
 On Windows client, [ModaXterm](https://mobaxterm.mobatek.net/) is recommended though it is a commercial freeware. It integrates SFTP and SSH so that you can view and edit your file 
-easily. You can even change the default editor used by ModaXterm. Other options are possible. For example, if you install git client for windows. You 
+easily. You can even change the default editor used by ModaXterm. Other client options are possible. For example, if you install git client for windows. You 
 can ssh to the server using git bash. The syntax is simply:
 
 ```bash
@@ -39,21 +39,21 @@ We also recommand [VSCode](https://code.visualstudio.com/), which combines code 
 tools all-in-one. With the help of Remote-SSH extension of VSCode, you can manage your project directly on cluster as it is in your local. You can install 
 many other extensions for your preference, such as Language support (Python/Matlab/C++/...), SFTP and UI Theme.
 
-IMPORTANT: Once you log in, reset password using the passwd tool and follow the prompt.  
+**IMPORTANT Notice** for first time login: Once you log in, reset password using the passwd tool and follow the prompt.  
 
 ```bash
 > passwd 
 ```
 The password change is shared, which means your login password to other machines are changed as well.
+
 ### Remote Desktop
 See [vnc](./vnc.md)
 
-
 ### Webpage
 Our lab homepage is located at [http://10.8.4.170](http://10.8.4.170). From there you can find the link to our lab's wiki, gitlab and jupyter etc.
-For wiki and gitlab web service you need to register first. For jupyter web service, you login with your ssh username and password. 
+For wiki and gitlab web service you need to register first. For jupyter web service, you login with your ssh username and password.
 
-You can program in Python language using anaconda3 or python2 kernel currently on jupyter.
+You can program in Python language using anaconda3 kernel on jupyter.
 
 Currently the jupyter kernel is run on manage node and does not support GPU.
 
@@ -66,6 +66,8 @@ Your home directory is located at `/home/[username]`.  It contains the following
 * If you have stored files on `/data` or `/data/users` of the old server, you can find those files in `/home/[username]/_data` . 
 
 In addition, `/data/datasets` is now located at `/home/dataset`. 
+
+**Important Notice** for personal directory limit: our storage node only has limited space. To make sure most users can have enough space for their scientific research, it is required that each user can have at most 10 TB space. If you exceed this hard limit, please clean up your folder as soon as possible. You can move datasets to `/home/dataset` and erase unused intermediate model files. Your slurm account will be banned if you violate this. Thanks for your cooperation.
 
 ## 3. First look of the BCM Cluster 
 
