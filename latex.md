@@ -1,10 +1,10 @@
-To use latex on our server. You have two options.
+On our manage node, full scheme of texlive 2019 is installed.
 
-1. On Storage node, full version of texlive 2019 is installed, you can invoke LaTeX command from shell directory to compile the source.
+To use latex on our server. You need to add `/usr/local/texlive/2019/bin/x86_64-linux` to your path.
 
-1. On Manage node, a docker container for LaTex is installed. It is called [latexdockercmd](https://github.com/blang/latex-docker). See [docker.md](./docker.md) for prerequisite. Then all you need to do is to prepend your command with `latexdockercmd`. For example:
+Then
 ```shell
-mkdir -p build && latexdockercmd xelatex -output-directory=build your_file.tex
+mkdir -p build && xelatex -output-directory=build your_file.tex
 ```
 
 After successful complication, you can view your pdf with:
