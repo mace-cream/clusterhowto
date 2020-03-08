@@ -3,6 +3,7 @@
 ---------------------------------------
 ## Quality of Sevice (QoS)
 
+* The home directory of each user is restricted to 10TB in maximal.
 * Task directly running on manage node is allowed to use up to 10 GB memory and 14 CPUs. See [cron.md](./cron.md) for detail.
 * Task submitted by Slurm can choose different Quality of Sevice (QoS):
 
