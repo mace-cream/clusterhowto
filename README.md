@@ -292,7 +292,7 @@ see extra online resources:
 You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/文件:user-manual.pdf)
 
 ## 8. Further questions
-You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.4.170:88/yang/clusterhowto/issues). For instant communication please join the [slack](https://join.slack.com/t/lab2c/shared_invite/enQtODQyMTY4OTcyNTMwLWRkOTlkYmM2MWI3NGYzOWMwYTRkYzEzMTBjNjcxMWMxNTMxZjg2N2U1YzE5ZjI4YTE3ZTQ2ZWU2YzEyODNmMmU) channel of our lab.
+You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.4.170:88/yang/clusterhowto/issues). For instant communication please join the [slack](https://join.slack.com/t/lab2c/shared_invite/enQtODk0MDAxNDM2MjEwLTk3YzA3ZTRkODljZWQ0ZmI5MjJmMWNkNWUwMzhhZGRlNmNlZTNiMTlkZDc2NjcwZDNhZjBjYmY0NzhhMDVkNTg) channel of our lab.
 WeChat is not recommended to ask technical questions.
 
 ## Changelog
