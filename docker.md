@@ -1,11 +1,15 @@
 # Docker
-To use docker, you need to be within the docker group. You can contact the server admin to add you to the docker group if needed.
+To use docker, you need to be within the docker group of node01. You can contact the server admin to add you to the docker group if needed.
 
-Currently, you can only use docker in the manage node without GPU support.
+Currently, you can only use docker in node01 with GPU support. There are some security issues when using docker. Therefore it is not recommended to use docker container in service mode.
 
+## Example
+```shell
+srun -w node01 docker run --rm alpine:3.11 /bin/sh -c "echo 123;"
+```
 ## Run docker with current user
 ```shell
-docker run -it --rm --user="$(id -u):$(id -g)" your_image
+srun -w node01 docker run -it --rm --user="$(id -u):$(id -g)" your_image
 ```
 
 ## Build docker images using mainland mirror
@@ -30,10 +34,10 @@ ENV A_MIRROR=$A_MIRROR
 
 Finnaly, run the `docker` command with custom args:
 ```shell
-docker build -t your_target --build-arg A_MIRROR=1 .
+srun -w node01 docker build -t your_target --build-arg A_MIRROR=1 .
 ```
 
 ## Remove images with `none` tag
 ```shell
-docker rmi $(docker images --filter "dangling=true" -q)
+srun -w node01 docker rmi $(docker images --filter "dangling=true" -q)
 ```
