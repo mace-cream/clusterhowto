@@ -193,7 +193,7 @@ srun --gres=gpu:1 [command]
 ```
 
 * `--gres=gpu:1` requests one GPU for running the code. 
-* `[command]` can be any terminal command such as `python test.py` or `nvidia-smi` 
+* `[command]` can be any terminal command such as `python test.py` or `echo "hello world"` 
 
 Note that setting `--gres=gpu` to more than one will NOT automatically make your code faster! You also need to make sure your code supports multiple GPUs. See the following links on how to achieve this.
 
