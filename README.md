@@ -1,16 +1,16 @@
 # How to Use Our New Cluster 
 
 ---------------------------------------
-## Quality of Sevice (QoS)
+## Quality of Service (QoS)
 
 * The home directory of each user is restricted to 10TB in maximal.
 * Task directly running on manage node is allowed to use up to 10 GB memory and 14 CPUs. See [cron.md](./cron.md) for detail.
-* Task submitted by Slurm can choose different Quality of Sevice (QoS):
+* Task submitted by Slurm can choose different Quality of Service (QoS):
 
 |        QoS       |    Users   | \#GPUs | Priority |                        Example                       |
 |:----------------:|:----------:|:------:|:--------:|:----------------------------------------------------:|
-| normal (Default) |  Everyone  |    3   |   High   |       `srun --gres=gpu:1 -t 100 python main.py`      |
-|       high       | Applicants |    7   |  Normal  | `srun --qos=high --gres=gpu:1 -t 100 python main.py` |
+| normal (Default) |  Everyone  |    3   |   High   |       `srun --gres=gpu:1 python main.py`      |
+|       high       | Applicants |    7   |  Normal  | `srun --qos=high --gres=gpu:1 python main.py` |
 
 The high QoS have 7 extra GPUs for students submitting papers (and therefore 10 avaliable in total). You can apply it by consulting with Yang Li. 
 The Priority decide the order of the queue of jobs waiting to be scheduled. And jobs of same Priority will follow a FIFO schedule.
@@ -34,7 +34,7 @@ On Mac client, you can use the terminal to connect to the server. The syntax is 
 
 * `-Y` is optional for opening the X11 display
 
-* The default password is `123456`
+* Contact admin for password issue.
 
 We also recommand [VSCode](https://code.visualstudio.com/), which combines code editor, shell, git control and debug
 tools all-in-one. With the help of Remote-SSH extension of VSCode, you can manage your project directly on cluster as it is in your local. You can install 
