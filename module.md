@@ -1,26 +1,19 @@
 # module
 
-## How to add python package as new module
-First, use `module load` command to load necessary environment(e.g. anaconda3/py3, cuda, etc.). Then use `pip` command to  install target package at /cm/shared/apps/ rather than default python directory. You need sudo to write in this dir. 
+## How to load different Tensorflow Version?
+We have two versions of Tensorflow available on our sever: a very old version 1.8.0 and the last version of TF1 1.15.0.
 
-```shell
-pip install tensorflow-gpu==1.15 -t /cm/shared/apps/some/directory
+TF version 1.8.0 is combined with anaconda3/py3. Beside this, you also need following modules:
+```bash
+module load anaconda3 cuda90 cudnn openmpi/cuda 
 ```
 
-Then create a modulefile at /cm/shared/modulefile/ to let module system know it. In this file, two terms have to be announced. Add your necessary environment as dependency like:
-
-```
-if { [is-loaded cuda10.0/]==0 } {
-  module load cuda10.0
-}
+TF version 1.15.0 is a seperate module based on anaconda3/py3, you have to load it explicitly:
+```bash
+module load tensorflow/1.15.0
 ```
 
-and add the path of new package to PYTHONPATH to let python find it:
-
-```               
-prepend-path  PYTHONPATH  /cm/shared/apps/some/directory
-```
-
+TF2.x is not supported globally on server now.
 ## Small tips
 
 unload all loaded modules
