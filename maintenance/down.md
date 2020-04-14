@@ -11,3 +11,6 @@
 
 ## 2020/1/5
 由于电力检修，服务器集群于12:30左右正常关机。经核实，当天机房实际并未发生电力中断。15：30，在尝试重新启动服务器集群时，存储节点电源键失灵。随后管理节点和计算节点正常开机，赵丰同学临时挂载了其它存储源备用。次日，Amax工程师上门服务，对存储节点主板进行了未知操作后，电源键重新可用，存储节点顺利上线。
+
+### 2020/4/13
+this morning from 10:30am-12pm engineers will perform some testing and maintenance tasks on our server.  some network interruptions are expected. 现在我们换了一根网线，工程师说可能是以前的网线过长，如果有质量问题容易受电磁波干扰。。
