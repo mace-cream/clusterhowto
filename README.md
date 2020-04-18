@@ -297,6 +297,10 @@ WeChat is not recommended to ask technical questions.
 
 ## Changelog
 
+### Version 3.6
+* Add seafile service
+* Add overleaf service
+
 ### Version 3.5
 * Add many slurm tips
 * Add github and intranet gitlab support.
