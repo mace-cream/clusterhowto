@@ -3,17 +3,26 @@
 ---------------------------------------
 ## Quality of Service (QoS)
 
+### How many GPUs can I use?
+
 * The home directory of each user is restricted to 10TB in maximal.
 * Task directly running on manage node is allowed to use up to 10 GB memory and 14 CPUs. See [cron.md](./cron.md) for detail.
 * Task submitted by Slurm can choose different Quality of Service (QoS):
 
 |        QoS       |    Users   | \#GPUs | Priority |                        Example                       |
 |:----------------:|:----------:|:------:|:--------:|:----------------------------------------------------:|
-| normal (Default) |  Everyone  |    3   |   High   |       `srun --gres=gpu:1 python main.py`      |
+| normal (Default) |  Everyone  |    3   |   High   |       `srun [--qos=normal] --gres=gpu:1 python main.py`      |
 |       high       | Applicants |    7   |  Normal  | `srun --qos=high --gres=gpu:1 python main.py` |
 
-The high QoS have 7 extra GPUs for students submitting papers (and therefore 10 avaliable in total). You can apply it by consulting with Yang Li. 
-The Priority decide the order of the queue of jobs waiting to be scheduled. And jobs of same Priority will follow a FIFO schedule.
+The high QoS have 7 extra GPUs for students submitting papers (and therefore 10 avaliable in total). You can apply it by consulting with Yang Li.
+
+Note that, the number of extra high QoS may change depends on overall workload of our sever, i.e., get larger at low-workload and smaller at high-workload. This kind of change will take effect without further notice and you can check the latest quota in this page. 
+
+### Why my jobs are waiting?
+
+There are two reasons:
+- You have run out of your quota. In this case your waiting jobs will not be scheduled even though there's free rescources. Please wait for your previous job or apply more quota.
+- Your job is queued. In such case, our sever is very busy. The Priority decide the order of the queue of jobs waiting to be scheduled. As you see, normal QoS have hgher Priority than high QoS, and jobs of same Priority will follow a FIFO schedule.
 
 ## 1. Access the cluster
 If you are outside Nanshan Park, please turning on the [institute vpn](vpn.md) first.
@@ -292,7 +301,7 @@ see extra online resources:
 You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/文件:user-manual.pdf)
 
 ## 8. Further questions
-You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.4.170:88/yang/clusterhowto/issues). For instant communication please join the [slack](https://join.slack.com/t/lab2c/shared_invite/enQtODk0MDAxNDM2MjEwLTk3YzA3ZTRkODljZWQ0ZmI5MjJmMWNkNWUwMzhhZGRlNmNlZTNiMTlkZDc2NjcwZDNhZjBjYmY0NzhhMDVkNTg) channel of our lab.
+You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.4.170:88/yang/clusterhowto/issues). For instant communication please join the [slack](https://join.slack.com/t/lab2c/shared_invite/enQtODQyMTY4OTcyNTMwLWRkOTlkYmM2MWI3NGYzOWMwYTRkYzEzMTBjNjcxMWMxNTMxZjg2N2U1YzE5ZjI4YTE3ZTQ2ZWU2YzEyODNmMmU) channel of our lab.
 WeChat is not recommended to ask technical questions.
 
 ## Changelog
