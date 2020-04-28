@@ -50,5 +50,20 @@ Available virtual machine can be found from [vagrantup](https://app.vagrantup.co
 
 `ssh` to storage node(10.8.4.172) and then cd to `/home/feng/qemu/debian-jessie` working directory.
 
-Use `bash startup.sh` to start the virtual machine. 
+Use `bash startup.sh` to start the virtual machine. You need to wait about half a minite for the VM to be started.
+Then the following prompt is available.
+```
+debianqemu login: lab2c
+Password: 
+Linux debianqemu 3.16.0-6-armmp-lpae #1 SMP Debian 3.16.56-1+deb8u1 (2018-05-08) armv7l
 
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+lab2c@debianqemu:~$ pwd
+/home/lab2c
+```
+You can use the guest account `lab2c` with password `lab2c` to have a try.
