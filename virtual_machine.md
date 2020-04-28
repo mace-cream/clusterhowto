@@ -5,7 +5,7 @@
 由于历史原因，
 目前实验室部署有3类虚拟机系统, 一类是 vmware player, 由于安装的是免费版，限制较多，但图形化界面相对比较成熟；
 另一类是 virtualbox，为开源系统，采用 `valgrant` 进行管理。
-The third is `qemu` on storage node. You need to be at `/home/feng/qemu/debian-jessie` working directory to be able to start the vm.
+The third is `qemu` on storage node. 
 
 ## VMWare
 用 VMWare 虚拟机部署的虚拟机本着实用的原则，配置较高，一般处于关闭状态，仅在有需要时开机并且对外开放端口。
@@ -46,5 +46,9 @@ Available virtual machine can be found from [vagrantup](https://app.vagrantup.co
 
 默认是使用 ssh 登录。
 
+## Debian Arm
 
+`ssh` to storage node(10.8.4.172) and then cd to `/home/feng/qemu/debian-jessie` working directory.
+
+Use `bash startup.sh` to start the virtual machine. 
 
