@@ -25,3 +25,5 @@ You can use `srun` to submit matlab job to compute node.
 ## Mathematica Player
 You can use the storage node to run mathematica player. This software can view the Mathematica notebook. Type `WolframPlayer`
 to open the software.
+
+![](./wolfram_player.png)
