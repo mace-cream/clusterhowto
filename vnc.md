@@ -8,7 +8,7 @@
 
 连接时只需输入IP地址，无需输入端口号，用户名与密码与ssh 登录的用户名和密码相同。下图是 windows 客户端使用截图：
 
-![](screenshot.png)
+![](images/windows_remote_desktop_screenshot.png)
 
 thinlinc 还支持用浏览器作为客户端登录(HTTPS)，使用 300端口。https://10.8.4.170:300。
 

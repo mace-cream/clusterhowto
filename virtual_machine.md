@@ -16,7 +16,7 @@
 Windows 支持ssh 连接和rdp 连接，下图是用 rdp连接 windows 的截图：
 
 连接的效果图
-![](./screenshot2.png)
+![](./windows_rdp_screenshot2.png)
 
 Windows 10 虚拟机原来的网络配置是用 NAT 方法将远程桌面 3306 端口暴露给外网，后来由于要支持 matlab 的认证，改用 Bridge 方法加入 10.1.1.1/24 内网，虽然3306端口还开着，但原来配置的远程桌面不能使用了。目前可以用 VMWare （先登录 First Type 远程桌面）的方式连接。
 
