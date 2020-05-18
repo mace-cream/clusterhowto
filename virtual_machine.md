@@ -3,8 +3,9 @@
 本文档介绍虚拟机的使用，有关更轻量的 docker 虚拟化参见 [docker.md](./docker.md)。
 
 由于历史原因，
-目前实验室部署有两类虚拟机系统, 一类是 vmware player, 由于安装的是免费版，限制较多，但图形化界面相对比较成熟；
+目前实验室部署有3类虚拟机系统, 一类是 vmware player, 由于安装的是免费版，限制较多，但图形化界面相对比较成熟；
 另一类是 virtualbox，为开源系统，采用 `valgrant` 进行管理。
+The third is `qemu` on storage node. 
 
 ## VMWare
 用 VMWare 虚拟机部署的虚拟机本着实用的原则，配置较高，一般处于关闭状态，仅在有需要时开机并且对外开放端口。
@@ -45,5 +46,24 @@ Available virtual machine can be found from [vagrantup](https://app.vagrantup.co
 
 默认是使用 ssh 登录。
 
+## Debian Arm
 
+`ssh` to storage node(10.8.4.172) and then cd to `/home/feng/qemu/debian-jessie` working directory.
 
+Use `bash startup.sh` to start the virtual machine. You need to wait about half a minite for the VM to be started.
+Then the following prompt is available.
+```
+debianqemu login: lab2c
+Password: 
+Linux debianqemu 3.16.0-6-armmp-lpae #1 SMP Debian 3.16.56-1+deb8u1 (2018-05-08) armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+lab2c@debianqemu:~$ pwd
+/home/lab2c
+```
+You can use the guest account `lab2c` with password `lab2c` to have a try.
