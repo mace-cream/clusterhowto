@@ -186,7 +186,6 @@ python -m pip install --user graphviz
 If you need another version of Python package which is incompatible with existing installation. You need to configure your own Python environment using `conda`.
 See [Configure Environment](http://10.8.4.170/wiki/index.php/Configure_the_environment) for detail.
 
-For further detail you can check [python.md](./python.md).
 
 ## 5. How to use slurm 
 

@@ -47,7 +47,7 @@
 
 6. neural network library using cpus
    If your gpu resource limit is hit or you want to train your neural network using CPU. You can explicitly do this by specificying
-   some environment variable. See [Python Guide](./python.md) for detail.
+   some environment variable.
 
 7. Interactive Shell
    ```shell

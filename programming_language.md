@@ -1,5 +1,5 @@
 ## Python2.7
-This version of python will retire in 2020.1.1. Do not develop new codes in this version.
+This version of python retired in 2020.1.1. Do not develop new codes in this version.
 If you need to maintain old codes, consider transfer to Python 3.x.
 If you need to run Python2.7 codes of others. Here are some tips:
 
