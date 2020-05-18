@@ -152,11 +152,7 @@ soure .bashrc
 
 to make the change take into effect in your current session. Alternatively, you can simply start a new session by re-logging.
 
-### 3.2 C/C++ Environment
-
-See [cpp.md](./cpp.md) for detail.
-
-### 3.3 Python Environment
+### 3.2 Python Environment
 Important Notice: any problems about python 2 will not be supported by our lab's server admin.  
 
 #### PIP
