@@ -16,7 +16,7 @@
 Windows 支持ssh 连接和rdp 连接，下图是用 rdp连接 windows 的截图：
 
 连接的效果图
-![](./windows_rdp_screenshot2.png)
+![](./images/windows_rdp_screenshot2.png)
 
 Windows 10 虚拟机原来的网络配置是用 NAT 方法将远程桌面 3306 端口暴露给外网，后来由于要支持 matlab 的认证，改用 Bridge 方法加入 10.1.1.1/24 内网，虽然3306端口还开着，但原来配置的远程桌面不能使用了。目前可以用 VMWare （先登录 First Type 远程桌面）的方式连接。
 
@@ -35,7 +35,7 @@ Known issue: Only One user is allowed each time. See [rdpwrapper](https://github
 * MacOS High Serria (10.13)（4核8GB内存，64GB SSD本机硬盘，暂无公共账号），已安装 command line tools, `Homebrew`
 
 连接效果图
-![](./mac_screenshot3.png)
+![](./images/mac_vm_screenshot3.png)
 
 ## VirtualBox
 

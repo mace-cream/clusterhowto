@@ -28,7 +28,7 @@ sudo /usr/local/sbin/openconnect --protocol=nc https://sslvpn.tsinghua.edu.cn
 
 使用时，地址是 https://sslvpn.tsinghua.edu.cn, 用户名和密码与 info 相同。
 以下是 Mac 版本的使用截图
-![mac](./mac.png)
+![mac](./images/mac_juniper.png)
 
 ## 自建内网穿透
 如果你使用其他 Linux 发行版的操作系统，很可能无法使用官方VPN外网接入实验室服务器，此时可以用自建内网穿透的方式，
