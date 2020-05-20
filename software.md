@@ -30,3 +30,5 @@ to open the software.
 
 ## Texworks
 You can use the storage node to run texworks.
+
+![](./images/texworks.png)
