@@ -10,19 +10,23 @@ Feel free to check the job logs at [log](https://gitlab.com/zhaofeng-shu33/trian
 1. Create a project in gitlab.com (or our self hosted gitlab).
 
 1. You need to configure your runner at the project setting page. Your runner is private and project wide. That is, it will not be used by other people and other project. You do not need
-to install again `gitlab-runner` as it is already available on our manage node. You should register for your own purpose.
+to install again `gitlab-runner` as it is already available on our manage node. You should register for your own purpose. Just type
+`gitlab-runner register` to go. After registeration, using `gitlab-runner run` to start the runner.
 
 1. Using `srun` to submit your job in `.gitlab.yml` configuration file.
 
 1. Check the CICD page of the project.
 
 ## How to create multiple gitlab-runner instance on the same machine?
-The default runner installed on our manage node is a service, you can check it by
+The default runner installed on our manage node is a service, which is managed by system admin. Your own gitlab-runner
+is run in user mode and will use your account to execute the task.
+
+## Maintainance Note
+For maintainers, you can check the system gitlab-runner service by
 ```shell
 systemctl status gitlab-runner
 ```
-Since this runner registers several jobs for [gitlab.com](https://gitlab.com), it takes much longer time to check the job status for each registered runner (due to overseas speed limitation).
-Therefore it is benificial to install another gitlab-runner instance on manage node.
+### How to run another gitlab-runner instance globally? (For shared runner purpose)
 
 To do this, we resort to the docker solution. That is, we start the gitlab-runner as a docker service. The configuration file is located at [docker-compose.yml](http://10.8.4.170:88/zhaofeng-shu33/lab2cnew/blob/master/docker-compose.yml).
 After using `docker-compose start` to start the service. We can register for each project we need. However, since this runner is a Docker container, the shell executor is within the
