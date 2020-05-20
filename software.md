@@ -27,3 +27,6 @@ You can use the storage node to run mathematica player. This software can view t
 to open the software.
 
 ![](./images/wolfram_player.png)
+
+## Texworks
+You can use the storage node to run texworks.
