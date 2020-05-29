@@ -269,7 +269,7 @@ You can view the job queue using `squeue`. (This applies to all jobs submitted w
 
 * The column named ST displays the status of your job. 'R' stands for running and 'PD' stands for pending (waiting for resource).
 
-You can also monitor your jobs using GUI program `sview` or using a web browser. Visit https://10.8.4.170 and select User Portal. Log in with your account name and go to the Workload page (https://10.8.4.170:8081/userportal/#/workload) from the left menu. You will see the status of all your submitted jobs.
+You can also monitor your jobs using GUI program `sview` or using a web browser. Visit [User Portal](https://10.8.4.170:8081/userportal). Log in with your account name and go to the Workload page (https://10.8.4.170:8081/userportal/#/workload) from the left menu. You will see the status of all your submitted jobs.
 
 ![](images/tutorial02.png)
 
@@ -278,8 +278,6 @@ You can also monitor your jobs using GUI program `sview` or using a web browser.
 ```
 scancel [jobID]
 ```
-
-Do NOT use `kill` to stop a slurm job! It will only stop the slurm process, but not the job itself. 
 
 You can pipeline your work by submitting multiple sbatch scripts. The jobs will be allocated on different GPUs that are available. 
 
