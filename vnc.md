@@ -4,7 +4,8 @@
 
 目前实验室分别在管理节点（10.8.4.170）和存储节点（10.8.4.172）部署了 thinlinc 远程桌面服务器。
 
-The manage node supports 10 concurrent connections while the storage node supports 5 concurrent connections.
+The manage node supports 10 concurrent connections while the storage node supports 5 concurrent connections. If the maximum connection is hit,
+the server admins will coordinate on this issue and may cut off some sessions.
 
 欲使用，首先在[官网](https://www.cendio.com/thinlinc/download) 下载相应操作系统的客户端（**专用**）。
 
