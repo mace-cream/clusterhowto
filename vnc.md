@@ -1,8 +1,10 @@
 # Introduction
 
-本文档介绍远程桌面的使用，目前支持10个连接同时在线，未来有可能有所增加。
+本文档介绍远程桌面的使用。
 
 目前实验室分别在管理节点（10.8.4.170）和存储节点（10.8.4.172）部署了 thinlinc 远程桌面服务器。
+
+The manage node supports 10 concurrent connections while the storage node supports 5 concurrent connections.
 
 欲使用，首先在[官网](https://www.cendio.com/thinlinc/download) 下载相应操作系统的客户端（**专用**）。
 
