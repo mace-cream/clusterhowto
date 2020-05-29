@@ -21,10 +21,6 @@ You can find further details in other chapters.
 ```bash
 > srun --gres=gpu:1 python main.py
 ```
-- Submit a CPU-dense job using
-```bash
-> srun -c 4 python main.py
-```
 
 ## 1. Access the cluster
 
