@@ -10,7 +10,9 @@ module load anaconda3 cuda90 cudnn openmpi/cuda
 
 TF version 1.15.0 is a seperate module based on anaconda3/py3, you have to load it explicitly:
 ```bash
-module load tensorflow/1.15.0
+module load tensorflow/1.15.0 # gpu
+# or
+module load tensorflow/1.15.0-cpu
 ```
 
 TF2.x is not supported globally on server now.
