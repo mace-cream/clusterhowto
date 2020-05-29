@@ -330,7 +330,7 @@ There are two reasons:
 
 
 ## 6. Further documentation
-You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/File:user-manual.pdf)
+You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/File:user-manual.pdf).
 
 ## 7. Further questions
 You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.4.170:88/yang/clusterhowto/issues).
