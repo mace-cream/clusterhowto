@@ -1,13 +1,19 @@
 # How to Use Our Cluster 
 
-We have a high performance cluster for your research computation. This repo servers as a handbook for cluster usage. This document is a general introduction and you can find further details in other chapters.
+We have a high performance cluster for your research computation.
 
-## 0. Quick Start
-- Access server via SSH. You may need [VPN](vpn.md) outside iPark.
+This repo servers as a quick start tutorial for cluster usage.
+
+You can find further details in other chapters.
+
+## 0. 5 minutes Quick Start
+- Access server via SSH. You may need [VPN](vpn.md) outside iPark. You also need an SSH client. If you use windows operating system,
+  [ModaXterm](https://mobaxterm.mobatek.net/) is recommended. For other operating systems, you can use the default unix terminal.
 ```bash
-> ssh -Y [username]@10.8.4.170
+> ssh [username]@10.8.4.170
 ```
-- Load necessary modules using
+- For general computing tasks, using `anaconda3` is enough. This **package** includes `tensorflow` and `pytorch`.
+  You use the following command to load it:
 ```bash
 > module load anaconda3/py3
 ```
@@ -24,20 +30,30 @@ We have a high performance cluster for your research computation. This repo serv
 
 ### 1.1 Account
 
-We have already set account for all students. 
-It is VERY IMPORTANT to change password once you log in, reset password using the passwd tool and follow the prompt.  
+For new students, you need to apply for a cluster account from [server administrators](http://10.8.4.170/wiki/index.php/ServerAdmin).
+The cluster account consists of 3 parts: shell access to manage node(10.8.4.170) and storage node(10.8.4.172); universal identity verification(seafile, jupyter, etc);
+slurm account, which is used to submit jobs to computing node.
+
+You will get an initial password, which is very complex and
+it is VERY IMPORTANT to change password once you log in, reset password using the `passwd` tool and follow the prompt. 
 
 ```bash
 > passwd 
 ```
-**Never** use simple password like 123456, cluster admin will have a regular check on password complexity.
 
-Your home directory is located at `/home/[username]`. Your files on our old sever is in `/home/[username]/_data`. You can put/find commonly used datasets in `/home/dataset`. 
+**Never** use simple password like 123456, cluster admin may have a regular check on password complexity and reset your weak password.
 
-By default, your home directory has `700` permissions, which means others do not have read access to the files in your home. 
+Your home directory is located at `/home/[username]`.
+You can put/find commonly used datasets in `/home/dataset`.
+If you want to put data in this directory. Please declare it on [Dataset](http://10.8.4.170/wiki/index.php/Dataset).
+Otherwise, your dataset in `/home/dataset` may be removed without notice.
+
+By default, your home directory has `700` permissions, which means others do not have read access to the files in your home.
+
 ### 1.2 VPN
 
 If you are outside Nanshan Park, please turning on the [institute vpn](vpn.md) first. It is prohibited to use personal reverse proxies for security concern.
+If you use general reverse proxies (which means anyone can access the server using the cluster accounts from outside) on the lab, your slurm account will be banned.
 
 ### 1.3 Shell (Recommend)
 For Windows client, [ModaXterm](https://mobaxterm.mobatek.net/) is recommended though it is a commercial freeware. It integrates SFTP and SSH so that you can view and edit your file 
