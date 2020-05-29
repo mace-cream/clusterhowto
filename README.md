@@ -55,7 +55,7 @@ By default, your home directory has `700` permissions, which means others do not
 If you are outside Nanshan Park, please turning on the [institute vpn](vpn.md) first. It is prohibited to use personal reverse proxies for security concern.
 If you use general reverse proxies (which means anyone can access the server using the cluster accounts from outside) on the lab, your slurm account will be banned.
 
-### 1.3 Shell (Recommend)
+### 1.3 Shell Access(Recommend)
 For Windows client, [ModaXterm](https://mobaxterm.mobatek.net/) is recommended though it is a commercial freeware. It integrates SFTP and SSH so that you can view and edit your file 
 easily. You can even change the default editor used by ModaXterm. Other client options are possible. For example, if you install git client for windows. You 
 can ssh to the server using git bash. The syntax is simply:
@@ -69,14 +69,14 @@ For Mac client, you can use the terminal to connect to the server. The syntax is
 
 * `username` is the same user name you had on the old server .  
 
-* `-Y` is optional for opening the X11 display
+* `-Y` is optional for opening the X11 display, this options works natively for Linux desktop; if you install Xterm support on Mac or use ModaXterm on windows.
 
 We also recommand [VSCode](https://code.visualstudio.com/), which combines code editor, shell, git control and debug
 tools all-in-one. With the help of Remote-SSH extension of VSCode, you can manage your project directly on cluster as it is in your local. You can install 
 many other extensions for your preference, such as Language support (Python/Matlab/C++/...), SFTP and UI Theme.
 
 ### 1.4 Remote Desktop
-See [vnc](./vnc.md)
+You can also connect to our manage node or starge node using remote desktop, see [vnc](./vnc.md)
 
 ### 1.5 Webpage
 Our lab homepage is located at [http://10.8.4.170](http://10.8.4.170). From there you can find the link to our lab's wiki, gitlab and jupyter etc.
