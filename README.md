@@ -78,7 +78,7 @@ many other extensions for your preference, such as Language support (Python/Matl
 ### 1.4 Remote Desktop
 You can also connect to our manage node or starge node using remote desktop, see [vnc](./vnc.md)
 
-### 1.5 Webpage
+### 1.5 Jupyter Webpage
 Our lab homepage is located at [http://10.8.4.170](http://10.8.4.170). From there you can find the link to our lab's wiki, gitlab and jupyter etc.
 For wiki and gitlab web service you need to register first. For jupyter web service, you login with your ssh username and password.
 
@@ -106,7 +106,7 @@ Our cluster has 5 nodes (servers)
 * `nfs`: storage node that hosts the 77T file system `/home`
 
 As a user, you can access to the `bcm` and `nfs` node using the same username and password.
-These User information is stored in a central database. 
+
 To take advantage of the computing resources on nodes 1-3, you will need to use the SLURM workload manager.
 
 
@@ -116,7 +116,7 @@ To take advantage of the computing resources on nodes 1-3, you will need to use 
 
 BCM allows each user to customize their working environment, such as choosing different software version, through "module" commands. 
 
-For example, the default python version is 2.7. To use python 3, you need to load the `anaconda3 /py3` module.
+For example, the default python version is 2.7 on CentOS. To use python 3, you need to load the `anaconda3 /py3` module.
 
 ```shell
 module add anaconda3/py3
@@ -124,7 +124,7 @@ module add anaconda3/py3
 
 This adds anaconda 3 to your current session.  Now you can use Python 3.6 by typing `python`. 
 
-We have a lot of pre-installed modules like CUDA (for GPU programs), cuDNN (for deep learning) and openmpi (for parallel processing). You can use following command to see the complete software list. 
+We have a lot of pre-installed modules like CUDA (for GPU programs), cuDNN (for deep learning) and openmpi (for parallel processing). You can use following command to see the complete software list.
 ``` 
 module avail
 ```
@@ -163,7 +163,7 @@ The last two lines is where modules are loaded.  `gcc` is the C compiler, `slurm
 After you modify `.bashrc`, use
 
 ```
-soure .bashrc
+source .bashrc
 ```
 
 to make the change take into effect in your current session. Alternatively, you can simply start a new session by re-logging.
@@ -330,36 +330,11 @@ There are two reasons:
 
 
 ## 6. Further documentation
-You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/文件:user-manual.pdf)
+You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/File:user-manual.pdf)
 
 ## 7. Further questions
-You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.4.170:88/yang/clusterhowto/issues). For instant communication please join the [slack](https://join.slack.com/t/lab2c/shared_invite/enQtODQyMTY4OTcyNTMwLWRkOTlkYmM2MWI3NGYzOWMwYTRkYzEzMTBjNjcxMWMxNTMxZjg2N2U1YzE5ZjI4YTE3ZTQ2ZWU2YzEyODNmMmU) channel of our lab.
-WeChat is not recommended to ask technical questions.
+You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.4.170:88/yang/clusterhowto/issues).
+For instant communication please join the [slack](https://join.slack.com/t/lab2c/shared_invite/enQtODQyMTY4OTcyNTMwLWRkOTlkYmM2MWI3NGYzOWMwYTRkYzEzMTBjNjcxMWMxNTMxZjg2N2U1YzE5ZjI4YTE3ZTQ2ZWU2YzEyODNmMmU) channel of our lab.
+Though we have a wechat group for server related issues, it is not recommended to use it compared with the above ways.
 
-## Changelog
 
-### Version 3.6
-* Add seafile service
-* Add overleaf service
-
-### Version 3.5
-* Add many slurm tips
-* Add github and intranet gitlab support.
-* Add slack invitation link
-
-### Version 3.4
-* Add Matlab on Manage Node
-
-### Version 3.3
-* Add conda advanced tutorial
-
-### Version 3.2
-* Add how to use Jupyter
-
-### Version 3.1
-* Add how to use remote desktop
-* Add how to use C++ documentation
-* Removed web browser access since it is super laggy
-* Disabled ssh between nodes since we are moving to slurm for GPU management
-* Clarified instructions on module load
-* Added instructions on using slurm interactively with srun
