@@ -6,9 +6,9 @@ This repo servers as a quick start tutorial for cluster usage.
 
 You can find further details in other chapters.
 
-## 0. 5 minutes Quick Start
+## 5 minutes Quick Start
 - Access server via SSH. You may need [VPN](vpn.md) outside iPark. You also need an SSH client. If you use windows operating system,
-  [ModaXterm](https://mobaxterm.mobatek.net/) is recommended. For other operating systems, you can use the default unix terminal.
+  [ModaXterm](https://mobaxterm.mobatek.net/) is recommended. For other operating systems, you can use the default Unix terminal.
 ```bash
 > ssh [username]@10.8.4.170
 ```
@@ -205,12 +205,11 @@ srun --gres=gpu:1 [option] [command]
 
 | option     | description                                         | default value         |
 | ---------- | --------------------------------------------------- | --------------------- |
-| -c 4       | Use 4 cpus for the program                          | -c 1                  |
 | -w node01  | use node01 for computation                          | automictic allocation |
 | --qos=high | use high quality of service                         | --qos=normal          |
 | -t 200     | the maximum job running time is limited to 200 mins | -t 4320 (3 days)      |
 
-Note that setting `--gres=gpu` or `-c` to more than one will NOT automatically make your code faster! You also need to make sure your code supports multiple GPUs. See the following links on how to achieve this.
+Note that setting `--gres=gpu` to more than one will NOT automatically make your code faster! You also need to make sure your code supports multiple GPUs. See the following links on how to achieve this.
 
 * Keras: https://keras.io/getting-started/faq/#how-can-i-run-a-keras-model-on-multiple-gpus
 * Tensorflow: https://www.tensorflow.org/guide/using_gpu#using_multiple_gpus
@@ -218,25 +217,25 @@ Note that setting `--gres=gpu` or `-c` to more than one will NOT automatically m
 
 ### 4.2 Using sbatch
 
-While `srun` executes commands in real time, `sbatch` schedules your job for later execution. Therefore it is good for longer training jobs. e.g. You can submit as many jobs as you want to the slurm queue, and each job will be executed as soon as resources become available.  
+While `srun` executes commands in real time, `sbatch` schedules your job for later execution. Therefore it is good for longer training jobs. e.g. You can submit as many jobs as you want to the slurm queue, and each job will be executed as soon as resources become available.
 
 To submit a job, you need to wrap terminal commands within a `sbatch` script.   Suppose you want to run a GPU program `test.py`. First create a new file  `submit_jobs.sh`  with the following content:
 
 ```bash
 #!/bin/bash
-#SBATCH -J yang       # job name
+#SBATCH -J yang       # job name, optional
 #SBATCH -p defq       # partition name (should always be defq)
-#SBATCH -N 1          # number of computing node (should always be 1)
-#SBATCH --ntasks=1    # maximum number of parallel tasks (processes) 
+#SBATCH -N 1          # number of computing node
+#SBATCH --ntasks=1    # maximum number of parallel tasks (processes)
 #SBATCH --gres=gpu:1  # number of gpus allocated on each node
-#SBATCH -t 105:00     # maximum running time in hh:mm:ss format
+#SBATCH -t 105:00     # maximum running time in hh:mm:ss format, optional
 
 python test.py    
 ```
 
 * Lines starting with `#BATCH` are slurm allocation requests. In this example, we created a job named "yang" on the default queue (defq), allocated one computing node with one CPU core and one GPU per node. The allocation will be available for a maximum of 105 minutes.
 * The last line `python test.py` is the command to be run. If multiple commands are listed, they will be always be executed sequentially, NOT in parallel. 
-* `ntasks` and `--gres=gpu` should be 1 unless your code have multi-GPU support.  When using multiple GPUs, be nice and allocate no more than a few.  
+* `ntasks` and `--gres=gpu` should be 1 unless your code have multi-GPU support.  When using multiple GPUs, be nice and allocate no more than a few.
 
 Make the script executable by
 
@@ -250,7 +249,7 @@ Then submit the job with `sbatch`
 sbatch submit_jobs.sh                   
 ```
 
- The output log of this job will be saved to  `slurm-[jobID].out` in the current directory. A useful way to display the log in real time is via the tail command. e.g
+The output log of this job will be saved to  `slurm-[jobID].out` in the current directory. A useful way to display the log in real time is via the `tail` command. e.g
 
 ```
 tail -f slurm-177.out
@@ -260,7 +259,7 @@ To exit, use Ctrl-C.
 
 ### 4.3 View and Cancel jobs
 
-You can view the job queue using `squeue`. (This applies to all jobs submitted with `srun` or `sbatch`)  
+You can view the job queue using `squeue`. (This applies to all jobs submitted with `srun` or `sbatch`)
 
 ```bash
 [yang@bcm ~]$ squeue
