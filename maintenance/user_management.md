@@ -23,3 +23,9 @@ ldapsearch -x 'uid=weijiafeng'
 ldappasswd -s 123456 -W -D 'cn=root,dc=cm,dc=cluster' -x 'uid=weijiafeng,dc=cm,dc=cluster'
 ```
 `-s` 参数后面跟新的密码
+
+# LDAP setting
+```
+uri ldaps://10.8.4.170:636/
+base dc=cm,dc=cluster
+```
