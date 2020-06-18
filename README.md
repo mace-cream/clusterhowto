@@ -98,7 +98,7 @@ Our cluster has 5 nodes (servers)
 * `bcm`:  management node  
 * `node01` : computing node with 8 TITAN V GPUs, 56 CPUs, 256GB RAM
 * `node02`: computing node with 8 TITAN V GPUs, 256GB RAM
-* `node03` : computing node with 4 Telsa K80 GPU cores and 2 TITAN V GPUs, 128GB RAM, fastest CPU among all nodes
+* `node03` : computing node with 4 Tesla K80 GPU cores and 2 TITAN V GPUs, 128GB RAM, fastest CPU among all nodes
 * `nfs`: storage node that hosts the 77T file system `/home`
 
 As a user, you can access to the `bcm` and `nfs` node using the same username and password.
