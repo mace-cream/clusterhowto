@@ -47,3 +47,6 @@ In[2]:= Quit[]
 You can use the storage node to run texworks.
 
 ![](./images/texworks.png)
+
+## Inkscape
+You can use `inkscape` to make vector graphs, which are suitable for paper embedded figures.
