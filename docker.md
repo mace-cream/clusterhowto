@@ -41,3 +41,7 @@ srun -w node01 docker build -t your_target --build-arg A_MIRROR=1 .
 ```shell
 srun -w node01 docker rmi $(srun -w node01 docker images --filter "dangling=true" -q)
 ```
+## Remove stopped containers
+```shell
+docker container prune
+```
