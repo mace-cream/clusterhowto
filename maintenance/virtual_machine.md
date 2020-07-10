@@ -14,3 +14,9 @@ sudo qemu-nbd --disconnect /dev/nbd0
 sudo rmmod nbd
 ```
 See [this gist](https://gist.github.com/shamil/62935d9b456a6f9877b5) for further detail.
+
+## GUI Arm64
+
+```
+qemu-system-aarch64 -smp 2 -netdev user,id=mynet -device virtio-net-device,netdev=mynet -m 2G -M virt -cpu cortex-a72 -drive if=none,file=hdd01.qcow2,format=qcow2,id=hd0 -device virtio-blk-device,drive=hd0 -device VGA -kernel vmlinuz-4.19.0-9-arm64 -append 'root=/dev/vda2' -initrd initrd.img-4.19.0-9-arm64 -device virtio-scsi-device -device usb-ehci -device usb-kbd -device usb-mouse -usb
+```
