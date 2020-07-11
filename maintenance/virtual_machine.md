@@ -1,4 +1,6 @@
 ## Edit qemu qcow2 file
+This is needed to extract the linux kernel and boot temporary file system
+
 `/home/feng/qemu/debian-jessie/hda.qcow2` is the virtual disk of the qemu vm. You can actually mount this disk without
 starting the vm. The following steps are necessary to do this:
 ```shell
@@ -15,8 +17,23 @@ sudo rmmod nbd
 ```
 See [this gist](https://gist.github.com/shamil/62935d9b456a6f9877b5) for further detail.
 
-## GUI Arm64
+## Compile QEMU source code
+```
+./configure --help
+./configure --enable-gtk # the missing deps can be installed by apt ...
+make install # needs sudo, use make -j28 to accelerate
+```
 
+## GUI Arm64
+The following command is used to boot the debian buster system from the virtual disk
 ```
-qemu-system-aarch64 -smp 2 -netdev user,id=mynet -device virtio-net-device,netdev=mynet -m 2G -M virt -cpu cortex-a72 -drive if=none,file=hdd01.qcow2,format=qcow2,id=hd0 -device virtio-blk-device,drive=hd0 -device VGA -kernel vmlinuz-4.19.0-9-arm64 -append 'root=/dev/vda2' -initrd initrd.img-4.19.0-9-arm64 -device virtio-scsi-device -device usb-ehci -device usb-kbd -device usb-mouse -usb
+qemu-system-aarch64 -smp 2 -netdev user,id=mynet -device virtio-net-device,netdev=mynet \
+-m 2G -M virt -cpu cortex-a72 -drive if=none,file=hdd01.qcow2,format=qcow2,id=hd0 \
+-device virtio-blk-device,drive=hd0 -device VGA \
+-kernel vmlinuz-4.19.0-9-arm64 -append 'root=/dev/vda2' -initrd initrd.img-4.19.0-9-arm64 \
+-device virtio-scsi-device -device usb-ehci -device usb-kbd -device usb-mouse -usb
 ```
+To install the system for the first time, first you need to download the iso file, for example
+[debian-10.4.0-arm64-netinst.iso](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.4.0/arm64/iso-cd/debian-10.4.0-arm64-netinst.iso).
+
+Then using the following command to launch the installer:
