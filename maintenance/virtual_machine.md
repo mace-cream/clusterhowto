@@ -36,4 +36,14 @@ qemu-system-aarch64 -smp 2 -netdev user,id=mynet -device virtio-net-device,netde
 To install the system for the first time, first you need to download the iso file, for example
 [debian-10.4.0-arm64-netinst.iso](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.4.0/arm64/iso-cd/debian-10.4.0-arm64-netinst.iso).
 
+The second step is to create a virtual disk file. The command to do this is `qemu-img create`. We recommend `qcow2` format.
+```
+qemu-img create -q qcow2 hdd0.qcow2 40G
+```
 Then using the following command to launch the installer:
+```
+qemu-system-aarch64 -M virt -m 2048 -cpu cortex-a72 -smp 2 \
+-drive if=none,file=debian-10.4.0-arm64-netinst.iso,id=cdrom,media=cdrom \
+-device virtio-scsi-device -device scsi-cd,drive=cdrom \
+-drive if=none,file=hdd0.qcow2,id=hd0 -device virtio-blk-device,drive=hd0
+```
