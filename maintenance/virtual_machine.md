@@ -47,3 +47,11 @@ qemu-system-aarch64 -M virt -m 2048 -cpu cortex-a72 -smp 2 \
 -device virtio-scsi-device -device scsi-cd,drive=cdrom \
 -drive if=none,file=hdd0.qcow2,id=hd0 -device virtio-blk-device,drive=hd0
 ```
+
+For Ubuntu 18.04 you do not need to extract the kernel and initmf manually and the following command is enough to startup the system:
+```
+qemu-system-aarch64 -m 2048 -cpu cortex-a72 -smp 2 -M virt \
+-device virtio-scsi-device -drive if=none,file=hdd0.qcow2,id=hd0 -device virtio-blk-device,drive=hd0 \
+-display gtk -device bochs-display --bios QEMU_EFI.fd
+```
+within the directory `/home/feng/qemu/ubuntu-18.04`
