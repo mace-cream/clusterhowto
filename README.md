@@ -205,6 +205,8 @@ srun --gres=gpu:1 [option] [command]
 | --qos=high | use high quality of service                         | --qos=normal          |
 | -t 200     | the maximum job running time is limited to 200 mins | -t 4320 (3 days)      |
 
+The maximal time each GPU job is allowed to run is 3 days divided by the number of GPUs your job is using.
+
 Note that setting `--gres=gpu` to more than one will NOT automatically make your code faster! You also need to make sure your code supports multiple GPUs. See the following links on how to achieve this.
 
 * Keras: https://keras.io/getting-started/faq/#how-can-i-run-a-keras-model-on-multiple-gpus
