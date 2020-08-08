@@ -8,19 +8,20 @@ You can find further details in other chapters.
 
 ## 5 minutes Quick Start
 - Access server via SSH. You may need [VPN](vpn.md) outside iPark. You also need an SSH client. If you use windows operating system,
-  [ModaXterm](https://mobaxterm.mobatek.net/) is recommended. For other operating systems, you can use the default Unix terminal.
+  [ModaXterm](https://mobaxterm.mobatek.net/) is recommended. For other operating systems, you can use the system default terminal.
 ```bash
 > ssh [username]@10.8.4.170
 ```
 - For general computing tasks, using `anaconda3` is enough. This **package** includes `tensorflow` and `pytorch`.
   You use the following command to load it:
 ```bash
-> module load anaconda3/py3
+> module load slurm anaconda3/py3 cuda90/toolkit/9.0.176 cudnn/7.0
 ```
 - Submit a GPU job using
 ```bash
-> srun --gres=gpu:1 python main.py
+> srun --gres=gpu:1 python /home/feng/mcr/k_mnist_xregression_simple.py
 ```
+If you encounter any errors, please run `module purge` first and retry. If errors persist, please report your issue to the server admin.
 
 ## 1. Access the cluster
 
