@@ -120,7 +120,7 @@ module add anaconda3/py3
 
 This adds anaconda 3 to your current session.  Now you can use Python 3.6 by typing `python`. 
 
-We have a lot of pre-installed modules like CUDA (for GPU programs), cuDNN (for deep learning) and openmpi (for parallel processing). You can use following command to see the complete software list.
+We have a lot of pre-installed modules like CUDA (for GPU programs), cuDNN (for deep learning). You can use following command to see the complete software list.
 ``` 
 module avail
 ```
@@ -150,7 +150,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-module load gcc anaconda3/py3 cuda90/toolkit/9.0.176 cudnn/7.0 openmpi/cuda/64/3.1.3
+module load gcc anaconda3/py3 cuda90/toolkit/9.0.176 cudnn/7.0
 module load slurm 
 ```
 
