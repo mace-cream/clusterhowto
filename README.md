@@ -12,8 +12,7 @@ You can find further details in other chapters.
 ```bash
 > ssh [username]@10.8.4.170
 ```
-- For general computing tasks, using `anaconda3` is enough. This **package** includes `tensorflow` and `pytorch`.
-  You use the following command to load it:
+  Then You use the following command to load necessary modules to run GPU code:
 ```bash
 > module load slurm anaconda3/py3 cuda90/toolkit/9.0.176 cudnn/7.0
 ```
