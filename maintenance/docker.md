@@ -11,5 +11,13 @@ This service is maintained by `docker-compose`, configuration file at `/home/fen
 After modifying the configuration file, you need to stop the service, remove the container and create
 the service. Simply restarting the service does not work.
 
+In specific, the following commands should be executed:
+```
+docker stop 
+docker rm # do not use docker down to preserve the network
+docker create
+docker start # do not use docker up to start in backend
+```
+
 If you encounter the problem of cannot create bridged network, restarting docker daemon by
 `systemctl restart docker`.
