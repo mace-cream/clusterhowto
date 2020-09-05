@@ -21,3 +21,6 @@ docker-compose start # do not use docker up to start in backend
 
 If you encounter the problem of cannot create bridged network, restarting docker daemon by
 `systemctl restart docker`.
+
+### Reference
+* [科学地部署自己的 Overleaf 服务](https://harrychen.xyz/2020/02/15/self-host-overleaf-scientifically/)
