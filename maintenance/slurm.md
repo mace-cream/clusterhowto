@@ -26,3 +26,9 @@ scontrol
 update NodeName=node01 State=RESUME
 ```
 See [how-to-undrain-slurm-nodes-in-drain-state](https://stackoverflow.com/questions/29535118/how-to-undrain-slurm-nodes-in-drain-state)
+
+## How to check cpu usage of a node
+Output the top 20 cpu consuming program on node01:
+```shell
+srun -w node01 ps -Ao user,pcpu,args --sort=-pcpu | head -n 20
+```
