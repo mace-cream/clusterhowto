@@ -61,7 +61,7 @@ can ssh to the server using git bash. The syntax is simply:
 ```
 
 For Mac client, you can use the terminal to connect to the server. The syntax is listed as above. If you encounter locale setting warning, please add
-`export LC_ALL=en_US.UTF-8` to your `~/.bash_profile`(if you use other shells, the profile name is different). See [ssh.md](./ssh.md) for detailed doc.
+`export LC_ALL=en_US.UTF-8` to your `~/.bash_profile`(if you use other shells, the profile name is different). See [ssh.md](./service.md#ssh) for detailed doc.
 
 * `username` is the same user name you had on the old server .  
 
