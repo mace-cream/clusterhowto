@@ -1,4 +1,4 @@
-=== Startup
+## Startup
 Before 2018 May, our lab did not have any server. By the effects of Yang Li, postdoc of our lab at that time,
 we had one server machine during May. The initial three administrators also include Mingyang Li and Yue Zhang.
 The server is called "ace-cream" since Professor Shao-lun Huang, senior phd student xiangxiangxu and other
@@ -8,7 +8,7 @@ accessible at the personal website of Yang: [web ace_cream](http://yangli-feasib
 
 Student Feng Zhao also wrapped a python package called `ace_cream`, published on [pypi](https://pypi.org/project/ace-cream/).
 
-=== Upgrade
+## Upgrade
 Our old single server only had 4 GPUs and it was not enough when several students are in need. Competition for the occpucation
 of GPUs happened now and then inevitable.
 
