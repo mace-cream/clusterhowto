@@ -94,6 +94,14 @@ This document records account on our server.
 | 赵丰   | zhaof17 |
 | 王子丰  | wangzf18 |
 | 马飞    | mf17   |
+| 王子涵 | wangzh19 |
+| 张恒溪 | zhanghx20 |
+| 尹季鸿 | yjh20 |
+| 毛钰竹 | myz20 |
+| 高子迪 | gzd20 |
+| 李宛达 | lwd20 |
+| 朱勇赤| zhu-yc20 |
+
 
 ## GitHub Accounts
 | Email | Name |
@@ -123,3 +131,14 @@ This document records account on our server.
 |da.ri.mat42@gmail.com|	Riccardo|
 |weijia_feng@163.com| Weijia Feng|
 |761729038@qq.com| Liangsheng Xu|
+
+## Other email
+| Name | Email |
+|------|-------|
+| 施镇栋 | shizhendongmy@163.com |
+| 陈祺祺 | carmen_cqq@163.com |
+| 徐健 | xujian9512@163.com |
+| 朱奕霏 | b224hisl@hotmail.com |
+| 宋子午 | shilelieming@163.com |
+| 杨京芸 | k@abreto.net |
+| 颜熠 | yiyiyiyan@outlook.com |
