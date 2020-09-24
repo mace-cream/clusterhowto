@@ -69,7 +69,7 @@ This document records account on our server.
 | jackkuo        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
 | jielian        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
 | riccardo_mat        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
-| calvinchan        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
+| calvinchan        | Y         |   陈彦锋          |                               | TBSI, Lab 2C |         |                          |            |             |        |
 | ruhuishen        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
 | jiashuofan        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
 
