@@ -36,7 +36,7 @@ This document records account on our server.
 | weitaotang        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
 | wxy        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
 | xiangxiang        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
-| xinyi        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
+| xinyi        | Y         |             |    txyyaohui@gmail.com                           | TBSI, Lab 2C |         |                          |            |             |        |
 | yang        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
 | yangzl        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
 | yihualiang        | Y         |             |                               | TBSI, Lab 2C |         |                          |            |             |        |
