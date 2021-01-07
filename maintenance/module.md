@@ -7,6 +7,8 @@ First, use `module load` command to load necessary environment(e.g. anaconda3/py
 pip install tensorflow-gpu==1.15 -t /cm/shared/apps/some/directory
 ```
 
+It will be convinient to use tsinghua tuna by adding `-i https://pypi.tuna.tsinghua.edu.cn/simple`.
+
 Then create a modulefile at /cm/shared/modulefile/ to let module system know it. In this file, two terms have to be announced. Add your necessary environment as dependency like:
 
 ```
