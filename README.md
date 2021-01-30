@@ -189,7 +189,7 @@ This is the **only way to use the GPU resources** on our lab server.
 
 ### 4.1 Using srun
 
-For interactive development, you can use `srun`  to submit a single job.
+After interactive development on local workstation, you can use `srun`  to submit a single job.
 
 ```
 srun --gres=gpu:1 [option] [command]
