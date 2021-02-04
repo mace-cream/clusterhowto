@@ -14,3 +14,16 @@
 
 ### 2020/4/13
 this morning from 10:30am-12pm engineers will perform some testing and maintenance tasks on our server.  some network interruptions are expected. 现在我们换了一根网线，工程师说可能是以前的网线过长，如果有质量问题容易受电磁波干扰。。
+
+### 2021/2/3
+20.30 Weitao Tang report down of manage node
+
+20.34 web access ok
+
+21:00 call zhiyuan wu for remote assistant
+
+0:30 restart the server
+
+Next day, the engineer tries to find the reason
+
+11:20, computing nodes return to normal
