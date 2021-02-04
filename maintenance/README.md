@@ -31,6 +31,11 @@ sacctmgr modify qos normal set MaxTRESPerUser=cpu=32,gres/gpu=6
 ```
 
 ## add users to high usage GPU group
+See user qos association
+```
+sacctmgr show assoc format=user,qos
+```
+
  To divide high usage users into a separate group for higher computing resource allocation, follow the steps below:
  
  Create a new Quality of Service (QOS) group called high:
