@@ -85,7 +85,7 @@ Currently the jupyter kernel is run on manage node and does not support GPU.
 
 ## 2. Cluster Structure
 
-Our cluster has 5 nodes (servers)
+Our cluster has 7 nodes (servers)
 
 | nodename | direct shell access | ip address | OS           |
 | -------- | ------------------- | ---------- | ------------ |
@@ -93,17 +93,21 @@ Our cluster has 5 nodes (servers)
 | node01   | No                  |            | CentOS 7.6   |
 | node02   | No                  |            | CentOS 7.6   |
 | node03   | No                  |            | CentOS 7.6   |
+| node04   | No                  |            | CentOS 7.6   |
+| node05   | No                  |            | CentOS 7.6   |
 | nfs      | Yes                 | 10.8.4.172 | Ubuntu 16.04 |
 
 * `bcm`:  management node  
 * `node01` : computing node with 8 TITAN V GPUs, 56 CPUs, 256GB RAM
 * `node02`: computing node with 8 TITAN V GPUs, 256GB RAM
 * `node03` : computing node with 4 Tesla K80 GPU cores and 2 TITAN V GPUs, 128GB RAM, fastest CPU among all nodes
+* `node04`: computing node with 8 RTX 3090 GPUs, 256GB RAM
+* `node05`: computing node with 8 RTX 3090 GPUs, 256GB RAM
 * `nfs`: storage node that hosts the 77T file system `/home`
 
 As a user, you can access to the `bcm` and `nfs` node using the same username and password.
 
-To take advantage of the computing resources on nodes 1-3, you will need to use the SLURM workload manager.
+To take advantage of the computing resources on nodes 1-5, you will need to use the SLURM workload manager.
 
 
 ## 3. Setup a working environment
@@ -167,6 +171,16 @@ to make the change take into effect in your current session. Alternatively, you 
 ### 3.2 Python Environment
 Important Notice: any problems about python 2 will not be supported by our lab's server admin.  
 
+#### Deep Learning Environment
+Due to different GPU type and driver version, an sepecific envrionment may not ork well on all computing node. For simplicity,
+the table below lists the recommanded envrionment for different computing nodes:
+
+|                | node[01-03]                              | node[04-05]                              |
+|----------------|------------------------------------------|------------------------------------------|
+| Pytorch        | cuda11.1, cudnn8.0-cuda11.1, pytorch/1.7.1 | cuda11.1, cudnn8.0-cuda11.1, pytorch/1.8.0 |
+| Tensorflow 1.x | cuda10.0, cudnn7.6.5, tensorflow/1.15.0    | NOT SUPPORTED                            |
+| Tensorflow 2.x | cuda10.1, cudnn7.6.5, tensorflow/2.3.0     | NOT SUPPORTED                            |
+
 #### PIP
 
 If you need any additional Python packages which is not installed by anaconda or system python by default, you can use `pip` to install it within your home directory (with `--user` option)
@@ -180,7 +194,7 @@ python -m pip install --user graphviz
 If you need another version of Python package which is incompatible with existing installation. You need to configure your own Python environment using `conda`.
 See [Configure Environment](http://10.8.4.170/wiki/index.php/Configure_the_environment) for detail.
 
-
+### Deep Learning Environment
 
 ## 4. Submit a job using Slurm
 
@@ -204,6 +218,8 @@ srun --gres=gpu:1 [option] [command]
 | -w node01  | use node01 for computation                          | automictic allocation |
 | --qos=high | use high quality of service                         | --qos=normal          |
 | -t 200     | the maximum job running time is limited to 200 mins | -t 4320 (3 days)      |
+| --gres=gpu:1  | use 1 GPU for computation                          | None |
+| --unbuffered  | display output in real-time                          | None |
 
 The maximal time each GPU job is allowed to run is 3 days divided by the number of GPUs your job is using.
 
