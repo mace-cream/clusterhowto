@@ -48,7 +48,7 @@ rsync -av --progress your_file user@10.8.4.172:/home/user/[your path]
 
 # Overleaf
 Our server has deployed the overleaf community server.
-To start use it, visit [overleaf](http://10.8.4.170:8031).
+To start use it, visit [overleaf](http://10.8.4.172:8031).
 
 # NFS
 If you use unix system for your workstation, you can mount our nfs server by
