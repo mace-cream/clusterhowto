@@ -4,9 +4,9 @@
 ## Service starting up
 In the case where seafile and seahub services are down, we can reboot it manually by
 ```bash
-cd /home/feng/seafile-server/seafile-server-7.0.5
-bash seafile.sh start
-bash seahub.sh start
+cd /data1/seafile-server/seafile-server-7.0.5
+bash seafile.sh start # root priviledge
+bash seahub.sh start # root priviledge
 ```
 
 ## Advantages
