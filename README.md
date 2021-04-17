@@ -169,17 +169,26 @@ source .bashrc
 to make the change take into effect in your current session. Alternatively, you can simply start a new session by re-logging.
 
 ### 3.2 Python Environment
-Important Notice: any problems about python 2 will not be supported by our lab's server admin.  
+#### Python Version
+We have pre-installed multiple versions of python interpreter, together with many popular packages. Load corresponding module to use them:
+
+| Module Name    | Python Version | Package Version                  |
+|----------------|----------------|----------------------------------|
+| anaconda2/py2  | 2.7.16         | -                                |
+| anaconda3/py3  | 3.6.5          | tensorflow 1.8.0; pytorch 1.0.1  |
+| anaconda3/py38 | 3.8.5          | tensorflow 2.4.1; pytorch 1.8.1  |
+
+Important Notice: any problems about python 2 will not be supported by our lab's server admin.
 
 #### Deep Learning Environment
-Due to different GPU type and driver version, an sepecific envrionment may not ork well on all computing node. For simplicity,
+Due to different GPU type and driver version, an sepecific envrionment may not work well on all computing node. For simplicity,
 the table below lists the recommanded envrionment for different computing nodes:
 
-|                | node[01-03]                              | node[04-05]                              |
-|----------------|------------------------------------------|------------------------------------------|
-| Pytorch        | cuda11.1, cudnn8.0-cuda11.1, pytorch/1.7.1 | cuda11.1, cudnn8.0-cuda11.1, pytorch/1.8.0 |
-| Tensorflow 1.x | cuda10.0, cudnn7.6.5, tensorflow/1.15.0    | NOT SUPPORTED                            |
-| Tensorflow 2.x | cuda10.1, cudnn7.6.5, tensorflow/2.3.0     | NOT SUPPORTED                            |
+|                | node[01-03]                           | node[04-05]                                   |
+|----------------|---------------------------------------|-----------------------------------------------|
+| Pytorch        | cuda10.1 cudnn7.6.5 pytorch/1.7.1     | cuda11.1 cudnn8.0-cuda11.1 pytorch/1.8.0      |
+| Tensorflow 1.x | cuda10.0 cudnn7.6.5 tensorflow/1.15.0 | NOT SUPPORTED                                 |
+| Tensorflow 2.x | cuda10.1 cudnn7.6.5 tensorflow/2.3.0  | cuda11.1, cudnn8.0-cuda11.1, tensorflow/2.4.1 |
 
 #### PIP
 
