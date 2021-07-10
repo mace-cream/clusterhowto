@@ -6,4 +6,4 @@ You can configure your source editor to connect to the server.
 Install `LanguageTool Linter` and use external url:
 ![](./images/vscode_languagetool.png)
 ## Texstudio
-Also change the server url to `http://10.8.4.172:8088`.
+Also change the server url to `http://10.8.6.21:8088`.

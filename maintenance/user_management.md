@@ -26,8 +26,8 @@ ldappasswd -s 123456 -W -D 'cn=root,dc=cm,dc=cluster' -x 'uid=weijiafeng,dc=cm,d
 
 # LDAP setting
 ```
-uri ldaps://10.8.4.170:636/
+uri ldaps://10.8.6.22:636/
 base dc=cm,dc=cluster
 ```
 # User management GUI
-[lam](http://10.8.4.170/lam)
+[lam](http://10.8.6.22/lam)

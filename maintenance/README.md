@@ -10,7 +10,7 @@ Test user: username: `ntfs`. This user is controled by LDAP and is a non-root us
 
 ## Add new user
 
-To add a new user, use the [web portal](https://10.8.4.170:8081/bright-view/#!/auth/login).
+To add a new user, use the [web portal](https://10.8.6.22:8081/bright-view/#!/auth/login).
 
 ## slurm job accounting add new user 
 

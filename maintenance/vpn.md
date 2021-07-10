@@ -35,7 +35,7 @@ curl 客户端通过命令行参数可以指定 proxy server，但 matlab 不行
 ### 具体步骤
 这里以服务器的管理节点为例，对于工作站，也是类似的。
 
-1. 首先要在管理节点安装 VMWare Win10 虚拟机，配置网络环境为 Bridge，使用管理节点的 etho adapter，这里可能需要解锁 vmware 的一个高级功能，参考 [wiki](http://10.8.4.170/wiki/index.php/Admin)：
+1. 首先要在管理节点安装 VMWare Win10 虚拟机，配置网络环境为 Bridge，使用管理节点的 etho adapter，这里可能需要解锁 vmware 的一个高级功能，参考 [wiki](http://10.8.6.22/wiki/index.php/Admin)：
 配置静态ip, network mask, gateway, dns server ip ， 然后确保 win10 可以上外网. 打开 win10 icmp firewall 的限制。在管理节点可以 ping 通 10.1.1.4。
 
 1. 然后在 Win10 上安装 3proxy pre-built binary. 完成相关的配置，其中的要点有：取消 proxy 密码限制，打开对 3proxy service 的 firewall restriction。在管理节点使用 curl 命令测试 proxy server 是否正常。
@@ -57,4 +57,4 @@ curl 客户端通过命令行参数可以指定 proxy server，但 matlab 不行
 在实验室服务器管理节点部署 OpenVPN Server, 客户端安装 OpenVPN Client 后可直接访问到集群内网（计算节点和Win虚拟机），比如 ping 通 `10.1.1.2`（node02 的 ip）。
 安装 Client 后，要手动导入根证书，root certificate 在服务器 `/usr/share/doc/openvpn-2.4.6/sample/sample-keys/ca.crt` 的位置上。
 将该文件下载到本地，client config file 里 ca 换成本地 ca.crt 的绝对路径，注释掉 `cert` 和 `key` 的配置。
-添加 server ip 地址： `remote 10.8.4.170 1194` 及 使用用户名密码校验：`auth-user-pass`（与 ssh 登陆用户名与密码相同）。
+添加 server ip 地址： `remote 10.8.6.22 1194` 及 使用用户名密码校验：`auth-user-pass`（与 ssh 登陆用户名与密码相同）。

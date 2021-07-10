@@ -5,7 +5,7 @@ import socket
 from ssh2.session import Session
 from ssh2.exceptions import AuthenticationError
 
-ip = '10.8.4.170'
+ip = '10.8.6.22'
 port = 22
 # userlist = ['lewenyuan','lianjing','riccardo','tanyang','tianzhou','ziyanzheng']
 # userlist = ['wangbin','lirong','jielian','liangcheng','tianyu','hutianyu','jiarongli','anzhicheng','bunchalit','jackkuo','jinggewang',

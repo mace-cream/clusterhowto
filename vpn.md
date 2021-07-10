@@ -39,5 +39,5 @@ sudo /usr/local/sbin/openconnect --protocol=nc https://sslvpn.tsinghua.edu.cn
 
 
 ## GFW
-See [How to break through GFW](http://10.8.4.170/wiki/index.php/Guild_gfw)
+See [How to break through GFW](http://10.8.6.22/wiki/index.php/Guild_gfw)
 

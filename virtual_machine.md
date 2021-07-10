@@ -24,9 +24,9 @@ Windows 10 虚拟机原来的网络配置是用 NAT 方法将远程桌面 3306 �
 ### 连接Windows 远程桌面
 在 windows  电脑 上首先 ssh 登陆管理节点，在管理节点终端上输入
 ```shell
-ssh -L 10.8.4.170:3389:10.1.1.4:3389 username@10.8.4.170
+ssh -L 10.8.6.22:3389:10.1.1.4:3389 username@10.8.6.22
 ```
-然后打开远程桌面输入地址 10.8.4.170， 公共账号用户名：lab2c，密码：guest，是 Win10 普通用户。
+然后打开远程桌面输入地址 10.8.6.22， 公共账号用户名：lab2c，密码：guest，是 Win10 普通用户。
 后连接即可。RDP 会话过程 SSH 会话不能中断。
 
 连接成功后可用 Juniper客户端 输入自己的用户名和密码开启校本部VPN，以使用服务器集群上的 Matlab， Windows 虚拟机未安装 Matlab。
@@ -48,7 +48,7 @@ Available virtual machine can be found from [vagrantup](https://app.vagrantup.co
 
 ## Debian Arm
 
-`ssh` to storage node(10.8.4.172) and then cd to `/home/feng/qemu/debian-jessie` working directory.
+`ssh` to storage node(10.8.6.21) and then cd to `/home/feng/qemu/debian-jessie` working directory.
 
 Use `bash startup.sh` to start the virtual machine. You need to wait about half a minite for the VM to be started.
 Then the following prompt is available.

@@ -10,7 +10,7 @@ You can find further details in other chapters.
 - Access server via SSH. You may need [VPN](vpn.md) outside iPark. You also need an SSH client. If you use windows operating system,
   [ModaXterm](https://mobaxterm.mobatek.net/) is recommended. For other operating systems, you can use the system default terminal.
 ```bash
-> ssh [username]@10.8.4.170
+> ssh [username]@10.8.6.22
 ```
   Then You use the following command to load necessary modules to run GPU code:
 ```bash
@@ -26,8 +26,8 @@ If you encounter any errors, please run `module purge` first and retry. If error
 
 ### 1.1 Account
 
-For new students, you need to apply for a cluster account from [server administrators](http://10.8.4.170/wiki/index.php/ServerAdmin).
-The cluster account consists of 3 parts: shell access to manage node(10.8.4.170) and storage node(10.8.4.172); universal identity verification(seafile, jupyter, etc);
+For new students, you need to apply for a cluster account from [server administrators](http://10.8.6.22/wiki/index.php/ServerAdmin).
+The cluster account consists of 3 parts: shell access to manage node(10.8.6.22) and storage node(10.8.6.21); universal identity verification(seafile, jupyter, etc);
 slurm account, which is used to submit jobs to computing node.
 
 You will get an initial password, which is very complex and
@@ -41,7 +41,7 @@ it is VERY IMPORTANT to change password once you log in, reset password using th
 
 Your home directory is located at `/home/[username]`.
 You can put/find commonly used datasets in `/home/dataset`.
-If you want to put data in this directory. Please declare it on [Dataset](http://10.8.4.170/wiki/index.php/Dataset).
+If you want to put data in this directory. Please declare it on [Dataset](http://10.8.6.22/wiki/index.php/Dataset).
 Otherwise, your dataset in `/home/dataset` may be removed without notice.
 
 By default, your home directory has `700` permissions, which means others do not have read access to the files in your home.
@@ -57,7 +57,7 @@ easily. You can even change the default editor used by ModaXterm. Other client o
 can ssh to the server using git bash. The syntax is simply:
 
 ```bash
-> ssh -Y [username]@10.8.4.170
+> ssh -Y [username]@10.8.6.22
 ```
 
 For Mac client, you can use the terminal to connect to the server. The syntax is listed as above. If you encounter locale setting warning, please add
@@ -71,16 +71,8 @@ We also recommand [VSCode](https://code.visualstudio.com/), which combines code 
 tools all-in-one. With the help of Remote-SSH extension of VSCode, you can manage your project directly on cluster as it is in your local. You can install 
 many other extensions for your preference, such as Language support (Python/Matlab/C++/...), SFTP and UI Theme.
 
-### 1.4 Remote Desktop
-You can also connect to our manage node or starge node using remote desktop, see [vnc](./vnc.md)
-
-### 1.5 Jupyter Webpage
-Our lab homepage is located at [http://10.8.4.170](http://10.8.4.170). From there you can find the link to our lab's wiki, gitlab and jupyter etc.
-For wiki and gitlab web service you need to register first. For jupyter web service, you login with your ssh username and password.
-
-You can program in Python language using anaconda3 kernel on jupyter.
-
-Currently the jupyter kernel is run on manage node and does not support GPU.
+### 1.4 Cluster Home Page
+Our lab homepage is located at [http://10.8.6.22](http://10.8.6.22). From there you can find the link to our lab's wiki, gitlab, overleaf and jupyter etc. You can also connect to our manage node or storage node using remote desktop there. For wiki and gitlab web service you need to register first. For jupyter web service, you login with your ssh username and password.
 
 
 ## 2. Cluster Structure
@@ -89,13 +81,13 @@ Our cluster has 7 nodes (servers)
 
 | nodename | direct shell access | ip address | OS           |
 | -------- | ------------------- | ---------- | ------------ |
-| bcm      | Yes                 | 10.8.4.170 | CentOS 7.6   |
+| bcm      | Yes                 | 10.8.6.22 | CentOS 7.6   |
 | node01   | No                  |            | CentOS 7.6   |
 | node02   | No                  |            | CentOS 7.6   |
 | node03   | No                  |            | CentOS 7.6   |
 | node04   | No                  |            | CentOS 7.6   |
 | node05   | No                  |            | CentOS 7.6   |
-| nfs      | Yes                 | 10.8.4.172 | Ubuntu 16.04 |
+| nfs      | Yes                 | 10.8.6.21 | Ubuntu 16.04 |
 
 * `bcm`:  management node  
 * `node01` : computing node with 8 TITAN V GPUs, 56 CPUs, 256GB RAM
@@ -176,7 +168,7 @@ We have pre-installed multiple versions of python interpreter, together with man
 |----------------|----------------|----------------------------------|
 | anaconda2/py2  | 2.7.16         | -                                |
 | anaconda3/py3  | 3.6.5          | tensorflow 1.8.0; pytorch 1.0.1  |
-| anaconda3/py38 | 3.8.5          | tensorflow 2.4.1; pytorch 1.8.1  |
+<!-- | anaconda3/py38 | 3.8.5          | tensorflow 2.4.1; pytorch 1.8.1  | -->
 
 Important Notice: any problems about python 2 will not be supported by our lab's server admin.
 
@@ -201,7 +193,7 @@ python -m pip install --user graphviz
 ```
 #### Custom Environment
 If you need another version of Python package which is incompatible with existing installation. You need to configure your own Python environment using `conda`.
-See [Configure Environment](http://10.8.4.170/wiki/index.php/Configure_the_environment) for detail.
+See [Configure Environment](http://10.8.6.22/wiki/index.php/Configure_the_environment) for detail.
 
 ### Deep Learning Environment
 
@@ -292,7 +284,7 @@ You can view the job queue using `squeue`. (This applies to all jobs submitted w
 
 * The column named ST displays the status of your job. 'R' stands for running and 'PD' stands for pending (waiting for resource).
 
-You can also monitor your jobs using GUI program `sview` or using a web browser. Visit [User Portal](https://10.8.4.170:8081/userportal). Log in with your account name and go to the Workload page (https://10.8.4.170:8081/userportal/#/workload) from the left menu. You will see the status of all your submitted jobs.
+You can also monitor your jobs using GUI program `sview` or using a web browser. Visit [User Portal](https://10.8.6.22:8081/userportal). Log in with your account name and go to the Workload page (https://10.8.6.22:8081/userportal/#/workload) from the left menu. You will see the status of all your submitted jobs.
 
 ![](images/tutorial02.png)
 
@@ -346,10 +338,10 @@ There are two reasons:
 
 
 ## 6. Further documentation
-You can download the official user guide of how to user cluster at [User Manual](http://10.8.4.170/wiki/index.php/File:user-manual.pdf).
+You can download the official user guide of how to user cluster at [User Manual](http://10.8.6.22/wiki/index.php/File:user-manual.pdf).
 
 ## 7. Further questions
-You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.4.170:88/yang/clusterhowto/issues).
+You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.6.22:88/yang/clusterhowto/issues).
 For instant communication please join the [slack](https://join.slack.com/t/lab2c/shared_invite/enQtODQyMTY4OTcyNTMwLWRkOTlkYmM2MWI3NGYzOWMwYTRkYzEzMTBjNjcxMWMxNTMxZjg2N2U1YzE5ZjI4YTE3ZTQ2ZWU2YzEyODNmMmU) channel of our lab.
 Though we have a wechat group for server related issues, it is not recommended to use it compared with the above ways.
 

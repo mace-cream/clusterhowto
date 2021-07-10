@@ -28,7 +28,7 @@ to open the software.
 
 ![](./images/wolfram_player.png)
 
-You can also run Mathematica Computing Engine within Raspberry Pi. We have deployed [3 raspberries](http://10.8.4.170:88/zhaofeng-shu33/slurm-test-env) in our labs.
+You can also run Mathematica Computing Engine within Raspberry Pi. We have deployed [3 raspberries](http://10.8.6.22:88/zhaofeng-shu33/slurm-test-env) in our labs.
 See [wolfram](https://www.wolfram.com/raspberry-pi/) for detail.
 
 After `ssh pi@10.8.15.39` to the raspberry OS, type `wolfram` to start symbolic computing:

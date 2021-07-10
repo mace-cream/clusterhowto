@@ -95,7 +95,7 @@
 12. Submit graphics jobs
    You can use `slurm` to request graphics jobs, for example `xterm`. First you need to use `ssh-keygen -m pem` on our server to generate default 
    `~/.ssh/id_rsa.pub` and `~/,ssh/id_rsa`. You cannot specify the paraphrase. Then you should add `id_rsa.pub` to `~/.ssh/authorized_keys`. You can automatically
-   do so by `ssh-copy-id username@10.8.4.172`.
+   do so by `ssh-copy-id username@10.8.6.21`.
    Finally make sure you `ssh -Y` to our server (within network displays). Then use `srun --pty --x11 xterm` and enjoy it.
 
 13. Debug mpi programs within slurm

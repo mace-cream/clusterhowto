@@ -28,8 +28,8 @@ systemctl status gitlab-runner
 ```
 ### How to run another gitlab-runner instance globally? (For shared runner purpose)
 
-To do this, we resort to the docker solution. That is, we start the gitlab-runner as a docker service. The configuration file is located at [docker-compose.yml](http://10.8.4.170:88/zhaofeng-shu33/lab2cnew/blob/master/docker-compose.yml).
+To do this, we resort to the docker solution. That is, we start the gitlab-runner as a docker service. The configuration file is located at [docker-compose.yml](http://10.8.6.22:88/zhaofeng-shu33/lab2cnew/blob/master/docker-compose.yml).
 After using `docker-compose start` to start the service. We can register for each project we need. However, since this runner is a Docker container, the shell executor is within the
 container environment and is not usefully. We need to use the Docker executor as well. See [executor](https://docs.gitlab.com/runner/executors/README.html) how to configure Docker executor.
 
-For more information, please check [cicd doc](http://10.8.4.170:88/help/ci/yaml/README.md).
+For more information, please check [cicd doc](http://10.8.6.22:88/help/ci/yaml/README.md).

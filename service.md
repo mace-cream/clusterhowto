@@ -1,5 +1,5 @@
 # Seafile
-使用ssh登录的用户名和密码登录 [seafile cloud storage](http://10.8.4.170:8030/)。
+使用ssh登录的用户名和密码登录 [seafile cloud storage](http://10.8.6.22:8030/)。
 
 ## Service starting up
 In the case where seafile and seahub services are down, we can reboot it manually by
@@ -43,12 +43,12 @@ If you need to upload multiple files within a directory or upload large files, y
 
 On Windows platform, you can use Mobaxterm local terminal to finish this job. First `cd /drives/c/[your large files on disk C]` to your file. Then 
 ```shell
-rsync -av --progress your_file user@10.8.4.172:/home/user/[your path]
+rsync -av --progress your_file user@10.8.6.21:/home/user/[your path]
 ```
 
 # Overleaf
 Our server has deployed the overleaf community server.
-To start use it, visit [overleaf](http://10.8.4.172:8031).
+To start use it, visit [overleaf](http://10.8.6.21:8031).
 
 # NFS
 If you use unix system for your workstation, you can mount our nfs server by
@@ -56,7 +56,7 @@ If you use unix system for your workstation, you can mount our nfs server by
 ```shell
 sudo apt-get install nfs-common # Ubuntu
 sudo mkdir -p /mnt/server
-sudo mount 10.8.4.172:/data /mnt/server
+sudo mount 10.8.6.21:/data /mnt/server
 ```
 
 Limitations: you may not have proper access to your home directory. A possible solution is to change your local user id and group id to match the

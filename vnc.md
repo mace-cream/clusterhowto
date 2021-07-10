@@ -2,7 +2,7 @@
 
 本文档介绍远程桌面的使用。
 
-目前实验室分别在管理节点（10.8.4.170）和存储节点（10.8.4.172）部署了 thinlinc 远程桌面服务器。
+目前实验室分别在管理节点（10.8.6.22）和存储节点（10.8.6.21）部署了 thinlinc 远程桌面服务器。
 
 The manage node supports 10 concurrent connections while the storage node supports 5 concurrent connections. If the maximum connection is hit,
 the server admins will coordinate on this issue and may cut off some sessions.
@@ -13,7 +13,7 @@ the server admins will coordinate on this issue and may cut off some sessions.
 
 ![](images/windows_remote_desktop_screenshot.png)
 
-thinlinc 还支持用浏览器作为客户端登录(HTTPS)，使用 300端口。https://10.8.4.170:300。
+thinlinc 还支持用浏览器作为客户端登录(HTTPS)，使用 300端口。https://10.8.6.22:300。
 
 首次登录后选择桌面环境，管理节点建议选择 xfce 桌面环境, 存储节点选 gnome 桌面环境。
 
