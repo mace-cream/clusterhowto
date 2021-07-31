@@ -40,6 +40,6 @@ We also have three Internal Network for cluster:
 
 |Network|Description|
 | --------- | ------------------------ |
-|10.1.1.0/24|bright view management network|
+|10.1.1.0/24|bright view management network, including intranet for node01-05|
 |10.1.2.0/24|IPMI network for Node01-03|
 |172.16.1.0/24|High speed NFS ib network|

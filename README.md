@@ -30,25 +30,25 @@ For new students, you need to apply for a cluster account from [server administr
 The cluster account consists of 3 parts: shell access to manage node(10.8.6.22) and storage node(10.8.6.21); universal identity verification(seafile, jupyter, etc);
 slurm account, which is used to submit jobs to computing node.
 
-You will get an initial password, which is very complex and
-it is VERY IMPORTANT to change password once you log in, reset password using the `passwd` tool and follow the prompt. 
+You will get an initial password from the server admin, which is very complex, and
+you can change the password once you log in. Reset password using the `passwd` tool and follow the prompt. 
 
 ```bash
 > passwd 
 ```
 
-**Never** use simple password like 123456, cluster admin may have a regular check on password complexity and reset your weak password.
+When setting new password, **Never** use simple codeword like 123456, cluster admin may have a regular check on password complexity and reset your weak password.
 
 Your home directory is located at `/home/[username]`.
 You can put/find commonly used datasets in `/home/dataset`.
-If you want to put data in this directory. Please declare it on [Dataset](http://10.8.6.22/wiki/index.php/Dataset).
+If you want to put data in this directory, please declare it on [Dataset](http://10.8.6.22/wiki/index.php/Dataset).
 Otherwise, your dataset in `/home/dataset` may be removed without notice.
 
 By default, your home directory has `700` permissions, which means others do not have read access to the files in your home.
 
 ### 1.2 VPN
 
-If you are outside Nanshan Park, please turning on the [institute vpn](vpn.md) first. It is prohibited to use personal reverse proxies for security concern.
+If you are outside Nanshan Park, please look at the [institute vpn](vpn.md) first. It is prohibited to use personal reverse proxies due to security concern.
 If you use general reverse proxies (which means anyone can access the server using the cluster accounts from outside) on the lab, your slurm account will be banned.
 
 ### 1.3 Shell Access(Recommend)
@@ -114,7 +114,7 @@ For example, the default python version is 2.7 on CentOS. To use python 3, you n
 module add anaconda3/py3
 ```
 
-This adds anaconda 3 to your current session.  Now you can use Python 3.6 by typing `python`. 
+This adds `anaconda 3` to your current session.  Now you can use Python 3.8 by typing `python`. 
 
 We have a lot of pre-installed modules like CUDA (for GPU programs), cuDNN (for deep learning). You can use following command to see the complete software list.
 ``` 
@@ -167,8 +167,7 @@ We have pre-installed multiple versions of python interpreter, together with man
 | Module Name    | Python Version | Package Version                  |
 |----------------|----------------|----------------------------------|
 | anaconda2/py2  | 2.7.16         | -                                |
-| anaconda3/py3  | 3.6.5          | tensorflow 1.8.0; pytorch 1.0.1  |
-<!-- | anaconda3/py38 | 3.8.5          | tensorflow 2.4.1; pytorch 1.8.1  | -->
+| anaconda3/py3  | 3.8.5          | tensorflow 2.4.1; pytorch 1.8.1  |
 
 Important Notice: any problems about python 2 will not be supported by our lab's server admin.
 
