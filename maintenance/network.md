@@ -19,7 +19,9 @@ Two options to change network parameters for bcm:
 
 (2) Permanent change: Check web interface of [bright-view] (https://10.8.6.22:8081/bright-view/#!/auth/login), modify (a). Network Tab (2nd Tab) -> Networks -> externalnet -> edit -> Settings, and (b). Devices Tab (5th Tab) -> Head node -> bcm -> Edit -> Settings -> Interfaces. Settings in (a) determines overall network parameter for cluster, while (b) determines setting for specific devices.
 
-Storage Node is not governed by bright-view, modify scripts or use Network Setting GUI tool result in permanent change.
+Storage Node is not governed by bright-view. It's located in `/etc/NetworkManager/system-connections/`
+You can modify it with some Network Setting GUI or command line tool. Don't forget to restart the network interface before the new static
+ip address takes effect.
 
 ## 3. IP Pool Status
 Since we are using fixed IP setting, make sure there's no collision when you pick your favorite number.
