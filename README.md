@@ -240,6 +240,7 @@ To submit a job, you need to wrap terminal commands within a `sbatch` script.   
 #SBATCH -J yang       # job name, optional
 #SBATCH -p defq       # partition name (should always be defq)
 #SBATCH -N 1          # number of computing node
+#SBATCH -c 4          # number of cpus, for multi-thread programs
 #SBATCH --ntasks=1    # maximum number of parallel tasks (processes)
 #SBATCH --gres=gpu:1  # number of gpus allocated on each node
 #SBATCH -t 105:00     # maximum running time in hh:mm:ss format, optional
