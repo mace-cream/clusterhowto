@@ -167,7 +167,8 @@ We have pre-installed multiple versions of python interpreter, together with man
 | Module Name    | Python Version | Package Version                  |
 |----------------|----------------|----------------------------------|
 | anaconda2/py2  | 2.7.16         | -                                |
-| anaconda3/py3  | 3.8.5          | tensorflow 2.4.1; pytorch 1.8.1  |
+| anaconda3/py3  | 3.6.8          | tensorflow 1.8.0; pytorch 1.0.1  |
+| anaconda3/py38  | 3.8.5          | tensorflow 2.6.0; pytorch 1.9.0  |
 
 Important Notice: any problems about python 2 will not be supported by our lab's server admin.
 
