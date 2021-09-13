@@ -36,3 +36,5 @@ Afterwards: cluster suffer numerous down during February to March since this cra
 7/5 14:00 Temporal Power supplement and cluster reboot. We only open bcm/storage/Node01 because IT refused further booting as concern of 'limited power', though we heard Electric Engineer said its safe. Also because of movement of institute network server, 10.8.4.170 no more works. We still can't access cluster.
 
 7/9 17:00 和IT扯了几天皮，他们一直不给放新的IP，却推脱让我们找厂家，请出老师出马去问时却又称“不知道进展”。We have to move previous IPMI wire on Node05 (which use 10.8.6.0/24 network and not being influenced) to our cluster switch and use this as our new global interface. And cluster back to service after 7 days down.
+
+7/26 Full recovery. Total shutdown time 24 days.

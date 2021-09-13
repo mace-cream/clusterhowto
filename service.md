@@ -33,6 +33,9 @@ bash seahub.sh start # root priviledge
 ## About ssh in general
 SSH client has a configuration file. On macos it is located at `/etc/ssh/ssh_config`. It forwards `LC_*` and `LANG` environment variables to the server you ssh to by default. If these environment variables are not set properly, they could cause problems. See [locale setting](https://askubuntu.com/questions/412495/setlocale-lc-ctype-cannot-change-locale-utf-8) and [ssh forwarding env](https://superuser.com/questions/513819/utf-8-locale-portability-and-ssh) for detailed explanation.
 
+If you encounter locale setting warning, please add
+`export LC_ALL=en_US.UTF-8` to your `~/.bash_profile`(if you use other shells, the profile name is different).
+
 ## How to upload files to server
 ### GUI
 `sftp` is recommended

@@ -7,14 +7,14 @@ This repo servers as a quick start tutorial for cluster usage.
 You can find further details in other chapters.
 
 ## 5 minutes Quick Start
-- Access server via SSH. You may need [VPN](vpn.md) outside iPark. You also need an SSH client. If you use windows operating system,
-  [ModaXterm](https://mobaxterm.mobatek.net/) is recommended. For other operating systems, you can use the system default terminal.
+- Access server via SSH with following command. You may need [VPN](vpn.md) outside school. For SSH client,
+[ModaXterm](https://mobaxterm.mobatek.net/) is recommended for Windows users. For other operating systems, you can use the system default terminal.
 ```bash
 > ssh [username]@10.8.6.22
 ```
-  Then You use the following command to load necessary modules to run GPU code:
+  Then use the following command to load necessary modules to run GPU code:
 ```bash
-> module load slurm anaconda3/py3 cuda90/toolkit/9.0.176 cudnn/7.0
+> module load slurm anaconda3/py3 cuda10.1 cudnn/7.6.5
 ```
 - Submit a GPU job using
 ```bash
@@ -27,15 +27,9 @@ If you encounter any errors, please run `module purge` first and retry. If error
 ### 1.1 Account
 
 For new students, you need to apply for a cluster account from [server administrators](http://10.8.6.22/wiki/index.php/ServerAdmin).
-The cluster account consists of 3 parts: shell access to manage node(10.8.6.22) and storage node(10.8.6.21); universal identity verification(seafile, jupyter, etc);
-slurm account, which is used to submit jobs to computing node.
+The cluster account can be used in 3 purposes: shell access to manage node(10.8.6.22) and storage node(10.8.6.21); universal identity verification(seafile, jupyter, etc); slurm account, which is used to submit jobs to computing node.
 
-You will get an initial password from the server admin, which is very complex, and
-you can change the password once you log in. Reset password using the `passwd` tool and follow the prompt. 
-
-```bash
-> passwd 
-```
+You will get an initial password from the server admin, which is complex and can be changed once you log in. Reset password using the `passwd` tool and follow the prompt. 
 
 When setting new password, **Never** use simple codeword like 123456, cluster admin may have a regular check on password complexity and reset your weak password.
 
@@ -48,89 +42,43 @@ By default, your home directory has `700` permissions, which means others do not
 
 ### 1.2 VPN
 
-If you are outside Nanshan Park, please look at the [institute vpn](vpn.md) first. It is prohibited to use personal reverse proxies due to security concern.
-If you use general reverse proxies (which means anyone can access the server using the cluster accounts from outside) on the lab, your slurm account will be banned.
+Our server can only be accessed within the school private network. If you are outside of our school, please check the [institute vpn](vpn.md) first. It is prohibited to use personal reverse proxies due to security concern.
 
-### 1.3 Shell Access(Recommend)
+### 1.3 Shell Access
 For Windows client, [ModaXterm](https://mobaxterm.mobatek.net/) is recommended though it is a commercial freeware. It integrates SFTP and SSH so that you can view and edit your file 
-easily. You can even change the default editor used by ModaXterm. Other client options are possible. For example, if you install git client for windows. You 
-can ssh to the server using git bash. The syntax is simply:
+easily. Other client options are possible. For example, [Xshell](https://www.netsarang.com/en/xshell/), Powershell, [VSCode](https://code.visualstudio.com/), etc.
 
-```bash
-> ssh -Y [username]@10.8.6.22
-```
+For Mac client, you can use the terminal to connect to the server. See [ssh.md](./service.md#ssh) for more detailed.
 
-For Mac client, you can use the terminal to connect to the server. The syntax is listed as above. If you encounter locale setting warning, please add
-`export LC_ALL=en_US.UTF-8` to your `~/.bash_profile`(if you use other shells, the profile name is different). See [ssh.md](./service.md#ssh) for detailed doc.
-
-* `username` is the same user name you had on the old server .  
-
-* `-Y` is optional for opening the X11 display, this options works natively for Linux desktop; if you install Xterm support on Mac or use ModaXterm on windows.
-
-We also recommand [VSCode](https://code.visualstudio.com/), which combines code editor, shell, git control and debug
+For both platform we specially recommend [VSCode](https://code.visualstudio.com/), which combines code editor, shell, git control and debug
 tools all-in-one. With the help of Remote-SSH extension of VSCode, you can manage your project directly on cluster as it is in your local. You can install 
 many other extensions for your preference, such as Language support (Python/Matlab/C++/...), SFTP and UI Theme.
 
 ### 1.4 Cluster Home Page
-Our lab homepage is located at [http://10.8.6.22](http://10.8.6.22). From there you can find the link to our lab's wiki, gitlab, overleaf and jupyter etc. You can also connect to our manage node or storage node using remote desktop there. For wiki and gitlab web service you need to register first. For jupyter web service, you login with your ssh username and password.
+Our lab homepage is located at [http://10.8.6.22](http://10.8.6.22). From there you can find the link to our lab's wiki, gitlab, overleaf and jupyter etc. You can also connect to our manage node or storage node using remote desktop there. For wiki and gitlab web service you need to register first. For jupyter web service, you can login with your ssh username and password.
 
+## 2. Setup a working environment
 
-## 2. Cluster Structure
+### 2.1 Load modules
 
-Our cluster has 7 nodes (servers)
+We have many popular software pre-installed on our server, which can be easily imported to your own working environment through "module" command. 
 
-| nodename | direct shell access | ip address | OS           |
-| -------- | ------------------- | ---------- | ------------ |
-| bcm      | Yes                 | 10.8.6.22 | CentOS 7.6   |
-| node01   | No                  |            | CentOS 7.6   |
-| node02   | No                  |            | CentOS 7.6   |
-| node03   | No                  |            | CentOS 7.6   |
-| node04   | No                  |            | CentOS 7.6   |
-| node05   | No                  |            | CentOS 7.6   |
-| nfs      | Yes                 | 10.8.6.21 | Ubuntu 16.04 |
-
-* `bcm`:  management node  
-* `node01` : computing node with 8 TITAN V GPUs, 56 CPUs, 256GB RAM
-* `node02`: computing node with 8 TITAN V GPUs, 256GB RAM
-* `node03` : computing node with 4 Tesla K80 GPU cores and 2 TITAN V GPUs, 128GB RAM, fastest CPU among all nodes
-* `node04`: computing node with 8 RTX 3090 GPUs, 256GB RAM
-* `node05`: computing node with 8 RTX 3090 GPUs, 256GB RAM
-* `nfs`: storage node that hosts the 77T file system `/home`
-
-As a user, you can access to the `bcm` and `nfs` node using the same username and password.
-
-To take advantage of the computing resources on nodes 1-5, you will need to use the SLURM workload manager.
-
-
-## 3. Setup a working environment
-
-### 3.1 Load modules
-
-BCM allows each user to customize their working environment, such as choosing different software version, through "module" commands. 
-
-For example, the default python version is 2.7 on CentOS. To use python 3, you need to load the `anaconda3 /py3` module.
+For example, the default python version is 2.7 on CentOS. To use python 3, you need to load the `anaconda3/py3` module.
 
 ```shell
-module add anaconda3/py3
+module load anaconda3/py3
 ```
 
-This adds `anaconda 3` to your current session.  Now you can use Python 3.8 by typing `python`. 
+This adds `anaconda 3`, a popular python platform, to your current session. Now you can use Python 3.6 by typing `python`. 
 
-We have a lot of pre-installed modules like CUDA (for GPU programs), cuDNN (for deep learning). You can use following command to see the complete software list.
+We have a lot of pre-installed modules like CUDA/cuDNN (for GPU programs), Tensorflow/Pytorch (for deep learning). You can use following command to see the complete software list.
 ``` 
 module avail
 ```
 
-To make modules automatic loaded every time you log in, type
-
-```
-module initadd anaconda3/py3
-```
-
-You can also directly add the module to your session profile. i.e.  add the following line to the end of `~/.bashrc` ( a script that runs at the start of every new terminal session).
-If you use `zsh`, put the command in `~/.zshrc`.
+Important: Module command only works in current session. To make modules automatic loaded every time you log in, or make it default environment for SLURM, you need to modify your session profile. For example, modify `~/.bashrc` file like this ( a script that runs at the start of every new terminal session. If you use `zsh`, put the command in `~/.zshrc`).
 ``` 
-module load anaconda3/py3 
+module load slurm anaconda3/py3 cuda10.1 cudnn/7.6.5
 ```
 Here is a sample `.bashrc` file that include all the above packages:
 
@@ -146,21 +94,12 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-module load gcc anaconda3/py3 cuda90/toolkit/9.0.176 cudnn/7.0
-module load slurm 
+module load slurm anaconda3/py3 cuda10.1 cudnn/7.6.5
 ```
 
-The last two lines is where modules are loaded.  `gcc` is the C compiler, `slurm` is the workload manager (this line is added by default)
+The last line is where modules are loaded. This environment works for most deep learning requirements.
 
-After you modify `.bashrc`, use
-
-```
-source .bashrc
-```
-
-to make the change take into effect in your current session. Alternatively, you can simply start a new session by re-logging.
-
-### 3.2 Python Environment
+### 2.2 Python Environment
 #### Python Version
 We have pre-installed multiple versions of python interpreter, together with many popular packages. Load corresponding module to use them:
 
@@ -173,8 +112,8 @@ We have pre-installed multiple versions of python interpreter, together with man
 Important Notice: any problems about python 2 will not be supported by our lab's server admin.
 
 #### Deep Learning Environment
-Due to different GPU type and driver version, an sepecific envrionment may not work well on all computing node. For simplicity,
-the table below lists the recommanded envrionment for different computing nodes:
+Due to different GPU type and driver version, an specific environment may not work well on all computing node. For simplicity,
+the table below lists the recommended environment for different computing nodes. You may need to choose appropriate nodes in SLURM accordingly.
 
 |                | node[01-03]                           | node[04-05]                                   |
 |----------------|---------------------------------------|-----------------------------------------------|
@@ -195,23 +134,42 @@ python -m pip install --user graphviz
 If you need another version of Python package which is incompatible with existing installation. You need to configure your own Python environment using `conda`.
 See [Configure Environment](http://10.8.6.22/wiki/index.php/Configure_the_environment) for detail.
 
-### Deep Learning Environment
+## 3. Submit a job using Slurm
 
-## 4. Submit a job using Slurm
+### 3.1 Cluster Structure
 
-We will use SLURM to submit jobs to the cluster. It automatically allocates GPU/CPU resources to you based on your requests. 
-This is the **only way to use the GPU resources** on our lab server.
+We have 7 nodes (servers) in our cluster. Once you login, you will be in the manage node called bcm. Please do not directly run your job on bcm, instead use SLURM to submit jobs to other nodes. SLURM will automatically allocates GPU/CPU resources to you based on your requests. 
 
-### 4.1 Using srun
+SLURM is the **only way to use the GPU resources** on our lab server.
 
-After interactive development on local workstation, you can use `srun`  to submit a single job.
+| nodename | direct shell access | ip address | OS           |
+| -------- | ------------------- | ---------- | ------------ |
+| bcm      | Yes                 | 10.8.6.22 | CentOS 7.6   |
+| node01   | No                  |            | CentOS 7.6   |
+| node02   | No                  |            | CentOS 7.6   |
+| node03   | No                  |            | CentOS 7.6   |
+| node04   | No                  |            | CentOS 7.6   |
+| node05   | No                  |            | CentOS 7.6   |
+| nfs      | Yes                 | 10.8.6.21 | Ubuntu 16.04 |
+
+* `bcm`:  management node, where you typically login; 
+* `node01` : computing node with 8 TITAN V GPUs, 56 CPUs, 256GB RAM;
+* `node02`: computing node with 8 TITAN V GPUs, 256GB RAM;
+* `node03` : computing node with 4 Tesla K80 GPU cores and 2 TITAN V GPUs, 128GB RAM, fastest CPU among all nodes;
+* `node04`: computing node with 8 RTX 3090 GPUs, 256GB RAM;
+* `node05`: computing node with 8 RTX 3090 GPUs, 256GB RAM;
+* `nfs`: storage node that hosts the 120 TB file system `/home`;
+
+### 3.2 Using srun
+
+You can use `srun` command to submit a single job to SLURM.
 
 ```
 srun --gres=gpu:1 [option] [command]
 ```
 
 * `--gres=gpu:1` requests one GPU for running the code. 
-* `[command]` can be any terminal command such as `python test.py` or `echo "hello world"` 
+* `[command]` can be any terminal command such as `python test.py` 
 * `[option]` can be any of following:
 
 | option     | description                                         | default value         |
@@ -219,6 +177,7 @@ srun --gres=gpu:1 [option] [command]
 | -w node01  | use node01 for computation                          | automictic allocation |
 | --qos=high | use high quality of service                         | --qos=normal          |
 | -t 200     | the maximum job running time is limited to 200 mins | -t 4320 (3 days)      |
+| -c 4  | use 4 CPU cores for computation                          | -c 1 |
 | --gres=gpu:1  | use 1 GPU for computation                          | None |
 | --unbuffered  | display output in real-time                          | None |
 
@@ -230,34 +189,26 @@ Note that setting `--gres=gpu` to more than one will NOT automatically make your
 * Tensorflow: https://www.tensorflow.org/guide/using_gpu#using_multiple_gpus
 * Pytorch: https://pytorch.org/tutorials/beginner/former_torchies/parallelism_tutorial.html
 
-### 4.2 Using sbatch
+### 3.3 Using sbatch
 
-While `srun` executes commands in real time, `sbatch` schedules your job for later execution. Therefore it is good for longer training jobs. e.g. You can submit as many jobs as you want to the slurm queue, and each job will be executed as soon as resources become available.
+While `srun` run a single job and block your shell, `sbatch` command submits a list of your jobs together and run in background. And return the standard output into a `.out` file for later check.
 
-To submit a job, you need to wrap terminal commands within a `sbatch` script.   Suppose you want to run a GPU program `test.py`. First create a new file  `submit_jobs.sh`  with the following content:
+To submit a job, you need to wrap terminal commands within a `sbatch` script.   Suppose you want to run a list of GPU program like `test.py`. First create a new file `submit_jobs.sh`  with the following content:
 
 ```bash
 #!/bin/bash
 #SBATCH -J yang       # job name, optional
-#SBATCH -p defq       # partition name (should always be defq)
 #SBATCH -N 1          # number of computing node
 #SBATCH -c 4          # number of cpus, for multi-thread programs
-#SBATCH --ntasks=1    # maximum number of parallel tasks (processes)
 #SBATCH --gres=gpu:1  # number of gpus allocated on each node
-#SBATCH -t 105:00     # maximum running time in hh:mm:ss format, optional
 
-python test.py    
+python test1.py
+python test2.py --option on
+python test2.py --option off
 ```
 
-* Lines starting with `#BATCH` are slurm allocation requests. In this example, we created a job named "yang" on the default queue (defq), allocated one computing node with one CPU core and one GPU per node. The allocation will be available for a maximum of 105 minutes.
-* The last line `python test.py` is the command to be run. If multiple commands are listed, they will be always be executed sequentially, NOT in parallel. 
-* `ntasks` and `--gres=gpu` should be 1 unless your code have multi-GPU support.  When using multiple GPUs, be nice and allocate no more than a few.
-
-Make the script executable by
-
-```bash
-chmod a+x submit_jobs.sh
-```
+* Lines starting with `#SBATCH` are slurm options, which act identically to the options in `srun` command.
+* The last few lines `python test1.py` is the command to be run. If multiple commands are listed, they will be always be executed sequentially, NOT in parallel. 
 
 Then submit the job with `sbatch`
 
@@ -273,7 +224,7 @@ tail -f slurm-177.out
 
 To exit, use Ctrl-C.
 
-### 4.3 View and Cancel jobs
+### 3.4 View and Cancel jobs
 
 You can view the job queue using `squeue`. (This applies to all jobs submitted with `srun` or `sbatch`)
 
@@ -283,21 +234,19 @@ You can view the job queue using `squeue`. (This applies to all jobs submitted w
                177      defq     yang     yang  R       0:30      1 node01 
 ```
 
-* The column named ST displays the status of your job. 'R' stands for running and 'PD' stands for pending (waiting for resource).
+* The column named ST displays the status of your job. 'R' stands for running and 'PD' stands for pending. 'NODELIST(REASON)' shows where this job runs or the reason of pending.
 
-You can also monitor your jobs using GUI program `sview` or using a web browser. Visit [User Portal](https://10.8.6.22:8081/userportal). Log in with your account name and go to the Workload page (https://10.8.6.22:8081/userportal/#/workload) from the left menu. You will see the status of all your submitted jobs.
+<!-- You can also monitor your jobs using GUI program `sview` or using a web browser. Visit [User Portal](https://10.8.6.22:8081/userportal). Log in with your account name and go to the Workload page (https://10.8.6.22:8081/userportal/#/workload) from the left menu. You will see the status of all your submitted jobs.
 
-![](images/tutorial02.png)
+![](images/tutorial02.png) -->
 
- To cancel a job, use `scancel`:
+ To cancel a job, use `scancel` command:
 
 ```
 scancel [jobID]
-```
+``` 
 
-You can pipeline your work by submitting multiple sbatch scripts. The jobs will be allocated on different GPUs that are available. 
-
-### 4.4 Useful stuff about slurm
+<!-- ### 4.4 Useful stuff about slurm
 You can find many useful tutorial about slurm from world wide web. Here are some tips:
 `pestat -G` prints Slurm cluster status with 1 line per node. 
 
@@ -311,12 +260,12 @@ For extra documentation about how to use slurm, you can check [slurm.md](./slurm
 see extra online resources:
 
 * Official documentation: https://slurm.schedmd.com/documentation.html
-* A tutorial: https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html
+* A tutorial: https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html -->
 
 
-## 5. Quality of Service (QoS)
+## 4. Quality of Service (QoS)
 
-### 5.1 How many GPUs can I use?
+### 4.1 How many GPUs can I use?
 
 * The home directory of each user is restricted to 10TB in maximal.
 * Task directly running on manage node is allowed to use up to 10 GB memory and 14 CPUs. See [cron.md](./cron.md) for detail.
@@ -331,17 +280,16 @@ The high QoS have 7 extra GPUs for students submitting papers (and therefore 10 
 
 Note that, the number of extra high QoS may change depends on overall workload of our sever, i.e., get larger at low-workload and smaller at high-workload. This kind of change will take effect without further notice and you can check the latest quota in this page. 
 
-### 5.2 Why my jobs are waiting?
+### 4.2 Why my jobs are waiting?
 
 There are two reasons:
 - You have run out of your quota. In this case your waiting jobs will not be scheduled even though there's free rescources. Please wait for your previous job or apply more quota.
 - Your job is queued. In such case, our sever is very busy. The Priority decide the order of the queue of jobs waiting to be scheduled. As you see, normal QoS have hgher Priority than high QoS, and jobs of same Priority will follow a FIFO schedule.
 
 
-## 6. Further documentation
+## 5. Further documentation
 You can download the official user guide of how to user cluster at [User Manual](http://10.8.6.22/wiki/index.php/File:user-manual.pdf).
 
-## 7. Further questions
 You can submit issues on [our github](https://github.com/mace-cream/clusterhowto/issues) or [intranet gitlab](http://10.8.6.22:88/yang/clusterhowto/issues).
 For instant communication please join the [slack](https://join.slack.com/t/lab2c/shared_invite/enQtODQyMTY4OTcyNTMwLWRkOTlkYmM2MWI3NGYzOWMwYTRkYzEzMTBjNjcxMWMxNTMxZjg2N2U1YzE5ZjI4YTE3ZTQ2ZWU2YzEyODNmMmU) channel of our lab.
 Though we have a wechat group for server related issues, it is not recommended to use it compared with the above ways.
