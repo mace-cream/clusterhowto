@@ -1,5 +1,20 @@
 # Seafile
-使用ssh登录的用户名和密码登录 [seafile cloud storage](http://10.8.6.22:8030/)。
+Seafile is a cloud storage service. Our university has deployed a seafile service:
+[https://cloud.tsinghua.edu.cn/](https://cloud.tsinghua.edu.cn/). You can use it through your universal pass.
+
+Our server has also deployed an instance, whose account is managed by LDAP.
+You can use
+your ssh login name and password to use [seafile cloud storage](http://10.8.6.22:8030/).
+Notice that the file you uploaded through seafile is stored in our storage node.
+
+
+# Overleaf
+The university has an instance [https://overleaf.tsinghua.edu.cn](https://overleaf.tsinghua.edu.cn).
+You can login using your university universal pass.
+
+Our server has also deployed an overleaf community server.
+To start use it, visit [overleaf](http://10.8.6.21:8031).
+
 
 ## Service starting up
 In the case where seafile and seahub services are down, we can reboot it manually by
@@ -48,10 +63,6 @@ On Windows platform, you can use Mobaxterm local terminal to finish this job. Fi
 ```shell
 rsync -av --progress your_file user@10.8.6.21:/home/user/[your path]
 ```
-
-# Overleaf
-Our server has deployed the overleaf community server.
-To start use it, visit [overleaf](http://10.8.6.21:8031).
 
 # NFS
 If you use unix system for your workstation, you can mount our nfs server by

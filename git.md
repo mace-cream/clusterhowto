@@ -1,6 +1,6 @@
 # Git
 
-This document instructs you how to install a newer git locally.
+This document instructs you how to install a newer version of git on your local computer.
 
 ## Make a temporary working directory (optional)
 
