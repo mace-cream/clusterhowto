@@ -111,16 +111,16 @@ We have pre-installed multiple versions of python interpreter, together with man
 
 Important Notice: any problems about python 2 will not be supported by our lab's server admin.
 
-#### Deep Learning Environment
+#### Recommended Deep Learning Environment
 Due to different GPU type and driver version, an specific environment may not work well on all computing node. For simplicity,
 the table below lists the recommended environment for different computing nodes, i.e., load modules in this table along with `anaconda3/py3`,
 and then choose appropriate nodes using `-w` in srun accordingly.
 
-|                | node[01-03]                           | node[04-05]                                   |
-|----------------|---------------------------------------|-----------------------------------------------|
-| Pytorch        | cuda10.1 cudnn7.6.5 pytorch/1.7.1     | cuda11.1 cudnn8.0-cuda11.1 pytorch/1.8.0      |
-| Tensorflow 1.x | cuda10.0 cudnn7.6.5 tensorflow/1.15.0 | NOT SUPPORTED                                 |
-| Tensorflow 2.x | cuda10.1 cudnn7.6.5 tensorflow/2.3.0  | cuda11.1, cudnn8.0-cuda11.1, tensorflow/2.4.1 |
+|                | node[01-03]                            | node[04-05]                                    |
+|----------------|----------------------------------------|------------------------------------------------|
+| Pytorch        | cuda10.1 cudnn/7.6.5 pytorch/1.7.1     | cuda11.1 cudnn8.0-cuda11.1 pytorch/1.10.0_cu113|
+| Tensorflow 1.x | cuda10.0 cudnn/7.6.5 tensorflow/1.15.0 | NOT SUPPORTED                                  |
+| Tensorflow 2.x | cuda10.1 cudnn/7.6.5 tensorflow/2.3.0  | cuda11.1, cudnn8.0-cuda11.1, tensorflow/2.4.1  |
 
 Note: For `anaconda3/py38`, please load cuda11.1 and cudnn8.0-cuda11.1, and for now it only supports node[04-05].
 
