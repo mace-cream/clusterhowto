@@ -288,7 +288,7 @@ the least. What she mentioned was mostly related to some basic
 historical facts, which were hardly known by Feng Zhao and Xinyi Tong.
 The part Feng Zhao disliked about Xinyi Tong was Xinyi Tong\'s reference
 to the opinions from Zhihu platform. Though Feng Zhao admitted that
-there were some genious who answered questions in history domain, many
+there were some genius who answered questions in history domain, many
 answers were hearsays which were not grounded.
 
 \"Reading academic books on history is not an easy task.\" Feng Zhao
@@ -297,7 +297,7 @@ wondered.
 \"But you only need to find the part which interests you most.\" Nan
 Shen answered.
 
-Spring Peotic Couplet
+Spring Poetic Couplet
 ---------------------
 
 At the 2021 Spring Festival, we have our own office. The students

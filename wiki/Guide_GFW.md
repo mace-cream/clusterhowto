@@ -141,7 +141,8 @@ Iphone only allows installing app from its own store. Besides, you need
 an overseas account to download the vpn app. Recommended apps include
 *Potatso Lite* and *Shadowrocket*. The former has some limitations, for
 example, only browser is supported to use the proxy. The functionality
-of the latter is better but it requires purchase.
+of the latter is better but it requires purchase in App store of overseas.
+To buy *Shadowrocket* in such a case, you need an overseas account and an overseas credit card.
 
 V2ray How to
 ------------
@@ -149,7 +150,27 @@ V2ray How to
 **V2ray** is the next generation of proxy software and can be regarded
 as a superset of shadowsocks.
 
-### Windows Client
+### Command line Client
+The program `v2ray` can be used to start a server or client.
+For backward compatibility, set the environment variable `V2RAY_VMESS_AEAD_FORCED=false`
+on the server side if `alterid` is not equal to zero.
 
-Qv2ray is recommended since it is cross-platform. However, it is no
+### GUI Client
+
+`Qv2ray` is recommended since it is cross-platform. However, it is no
 longer maintained.
+
+### Iphone Client
+It's known that only *Shadowrocket* works.
+
+### Traffic counting
+The default server program has the ability to count the traffic amount for each client users.
+The configuration file needs to be modified.
+
+### Trouble shooting
+Change the loglevel to debug in the configuration file.
+```JSON
+"log": {
+    "loglevel": "debug"
+}
+```
